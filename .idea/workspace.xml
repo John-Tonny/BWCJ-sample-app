@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c4c73858-a746-4b87-9f09-4e87fbcf284a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/ApiUrls.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/ApiUrls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/model/credentials/SharedPreferencesCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/model/credentials/SharedPreferencesCredentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/AsyncMainActivityPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/AsyncMainActivityPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/IMainActivityPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/IMainActivityPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/view/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/view/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/bwcj-0.1.14.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/bwcj-0.1.14.jar" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="192.168.54.101:5555" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/slf4j-api-1.7.20">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/bwcj-0.1.14">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="BWCJ-sample-app" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1sWIGtKf3OCvjDJGPv9Kf4g0ODD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="192.168.119.101:5555" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-22T07:33:12.495Z" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.project.structure.last.selected" value="SDK Location" />
+    <property name="android.project.structure.proportion" value="0.15" />
+    <property name="android.sdk.path" value="G:/Android" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BWCJ-sample-app-bak" />
+    <property name="project.structure.last.edited" value="Dependencies" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RunManager" selected="Android App.bwsclientsample">
+    <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="bwsclientsample" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="bwsclientsample" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BWCJ-sample-app [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.BWCJ-sample-app [assemble]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c4c73858-a746-4b87-9f09-4e87fbcf284a" name="Default Changelist" comment="" />
+      <created>1620981825540</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620981825540</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="214" y="105" key="#PSD" timestamp="1626076509115">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="214" y="105" key="#PSD/0.0.1536.824@0.0.1536.824" timestamp="1626076509115" />
+    <state x="477" y="0" key="#bwsclientsample" timestamp="1626081154318">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="477" y="0" key="#bwsclientsample/0.0.1536.824@0.0.1536.824" timestamp="1626081154318" />
+    <state x="632" y="109" key="#xdebugger.XInspectDialog" timestamp="1621906023679">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="632" y="109" key="#xdebugger.XInspectDialog/0.0.1536.824@0.0.1536.824" timestamp="1621906023679" />
+    <state x="595" y="163" key="AndroidProcessChooserDialog" timestamp="1621929190363">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="595" y="163" key="AndroidProcessChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1621929190363" />
+    <state width="887" height="466" key="DebuggerActiveHint" timestamp="1626078467525">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="887" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1626078467525" />
+    <state x="550" y="153" key="FileChooserDialogImpl" timestamp="1626073000843">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="550" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1626073000843" />
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1626082224830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1626082224830" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1626082224830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1626082224830" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1626082224830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1626082224830" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1626082224830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1626082224830" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1626082224831">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1626082224831" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1626082224830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1626082224830" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1626082224830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1626082224830" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1626082224830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1626082224830" />
+    <state x="153" y="0" key="SettingsEditor" timestamp="1626076482007">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="153" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1626076482007" />
+    <state x="447" y="146" width="904" height="672" key="find.popup" timestamp="1624371679762">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="447" y="146" width="904" height="672" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1624371679762" />
+    <state x="342" y="185" key="run.anything.popup" timestamp="1624549856442">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="342" y="185" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1624549856442" />
+    <state x="431" y="145" width="840" height="678" key="search.everywhere.popup" timestamp="1626075895187">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="840" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1626075895187" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/bwcj-0.1.14/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/utils/atomicswap/RefundContract.class</url>
+          <line>57</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/bwcj-0.1.14/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/data/entity/pojo/transaction/AtomicswapInitiateData.class</url>
+          <line>14</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>541</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>542</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>543</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>544</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/bwcj-0.1.14/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/data/entity/gson/copayer/GsonCopayer.class</url>
+          <line>81</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>616</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>614</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>605</line>
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>618</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>505</line>
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>509</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>510</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>511</line>
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>512</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>514</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>576</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>574</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>489</line>
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/bwcj-0.1.14/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/transactionProposal/addNewAtomicswapInitiateTxp/AddNewAtomicswapInitiateTxpUseCase.class</url>
+          <line>45</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/bwcj-0.1.14/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/credentials/InitializeCredentialsWithRandomValueUseCase.class</url>
+          <line>24</line>
+          <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>244</line>
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>245</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>246</line>
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>243</line>
+          <option name="timeStamp" value="181" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/data/entity/gson/copayer/GsonCopayer.class</url>
+          <line>51</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.4.0/451207353948708405a08287e2a315c3f23553fe/retrofit-2.4.0-sources.jar!/retrofit2/Response.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="208" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.4.0/451207353948708405a08287e2a315c3f23553fe/retrofit-2.4.0-sources.jar!/retrofit2/Response.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="209" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/data/entity/gson/wallet/GsonWalletCore.class</url>
+          <line>77</line>
+          <option name="timeStamp" value="232" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>273</line>
+          <option name="timeStamp" value="234" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>248</line>
+          <option name="timeStamp" value="240" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/service/bitcoreWalletService/retrofit2/Retrofit2BwsApiBridge.class</url>
+          <line>126</line>
+          <option name="timeStamp" value="244" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>657</line>
+          <option name="timeStamp" value="245" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>660</line>
+          <option name="timeStamp" value="246" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/wallet/joinWalletInCreation/JoinWalletInCreationUseCase.class</url>
+          <line>35</line>
+          <option name="timeStamp" value="265" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>642</line>
+          <option name="timeStamp" value="266" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/wallet/joinWalletInCreation/JoinWalletInCreationUseCase.class</url>
+          <line>43</line>
+          <option name="timeStamp" value="268" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>280</line>
+          <option name="timeStamp" value="271" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>297</line>
+          <option name="timeStamp" value="275" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/transactionProposal/signTxp/SignTxpUseCase.class</url>
+          <line>65</line>
+          <option name="timeStamp" value="279" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/masternode/ping/GetMasternodePingUseCase.class</url>
+          <line>35</line>
+          <option name="timeStamp" value="280" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/service/bitcoreWalletService/retrofit2/Retrofit2BwsApiBridge.class</url>
+          <line>342</line>
+          <option name="timeStamp" value="281" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/transactionProposal/signTxp/SignTxpUseCase.class</url>
+          <line>51</line>
+          <option name="timeStamp" value="283" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/transactionProposal/signTxp/SignTxpUseCase.class</url>
+          <line>111</line>
+          <option name="timeStamp" value="284" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/dashj-core-0.15.jar!/org/bitcoinj/core/Transaction.class</url>
+          <line>693</line>
+          <option name="timeStamp" value="286" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/transactionProposal/signTxp/SignTxpUseCase.class</url>
+          <line>116</line>
+          <option name="timeStamp" value="288" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/dashj-core-0.15.jar!/org/bitcoinj/core/Transaction.class</url>
+          <line>756</line>
+          <option name="timeStamp" value="289" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/transactionProposal/signTxp/SignTxpUseCase.class</url>
+          <line>57</line>
+          <option name="timeStamp" value="290" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/transactionProposal/signTxp/SignTxpUseCase.class</url>
+          <line>61</line>
+          <option name="timeStamp" value="291" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/service/bitcoreWalletService/retrofit2/Retrofit2BwsApiBridge.class</url>
+          <line>317</line>
+          <option name="timeStamp" value="293" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/service/bitcoreWalletService/retrofit2/Retrofit2BwsApiBridge.class</url>
+          <line>320</line>
+          <option name="timeStamp" value="294" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/service/bitcoreWalletService/retrofit2/Retrofit2BwsApiBridge.class</url>
+          <line>323</line>
+          <option name="timeStamp" value="295" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>406</line>
+          <option name="timeStamp" value="305" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="bwsclientsample">
+        <watch expression="bos.toByteArray()" language="JAVA" />
+        <watch expression="privs.get(0).toAddress()" language="JAVA" />
+        <watch expression="response.body()" language="JAVA" />
+        <watch expression="getMasternodesUseCase" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
+    tools:context="org.openkuva.kuvabase.bwcj.sample.view.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/ma_create_wallet_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="create wallet" />
+
+            <TextView
+                android:id="@+id/ma_wallet_id_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="id"
+                android:textIsSelectable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_words"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mnemonic"
+            android:textIsSelectable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/ma_wallet_address_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="get address" />
+
+            <TextView
+                android:id="@+id/ma_wallet_address_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="address"
+                android:textIsSelectable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ma_wallet_balance_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="get balance" />
+
+            <TextView
+                android:id="@+id/ma_wallet_balance_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="balance"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="4dp"
+            android:background="@color/colorPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send to" />
+
+        <EditText
+            android:id="@+id/ma_wallet_address_to_send_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DASH" />
+
+        <EditText
+            android:id="@+id/ma_dash_to_send_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Message" />
+
+        <EditText
+            android:id="@+id/ma_msg_to_send_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/ma_send_dash_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="send" />
+
+
+        <Button
+            android:id="@+id/ma_swap_initiate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="create initiate" />
+        <Button
+            android:id="@+id/ma_swap_participate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="create participate" />
+
+        <Button
+            android:id="@+id/ma_swap_redeem_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="create redeem" />
+        <Button
+            android:id="@+id/ma_swap_refund_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="create refund" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CallBack:" />
+
+        <TextView
+            android:id="@+id/ma_send_dash_callback_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="4dp"
+            android:background="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/ma_wallet_recovery_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRecovery"
+                android:text="recovery" />
+
+            <EditText
+                android:id="@+id/ma_wallet_recovery_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="12 words"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/ma_delete_all_pending_txp_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onDeleteAllPendingTxp"
+            android:text="delete all pending txp" />
+        <Button
+            android:id="@+id/ma_get_history_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onGetTxHistory"
+            android:text="get tx history" />
+        <Button
+            android:id="@+id/ma_get_atomicswap_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onGetPendingAtomicswap"
+            android:text="get pending atomicswap" />
+
+
+        <EditText
+            android:id="@+id/ma_wallet_txid_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/ma_wallet_address_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/ma_wallet_payee_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/ma_get_masternode_status_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onGetMasternodeStatus"
+            android:text="get masternode status" />
+        <Button
+            android:id="@+id/ma_get_masternode_collateral_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onGetMasternodeCollateral"
+            android:text="get masternode collateral" />
+        <Button
+            android:id="@+id/ma_get_masternodes_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onGetMasternodes"
+            android:text="get masternodes" />
+        <Button
+            android:id="@+id/ma_remove_masternodes_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRemoveMasternodes"
+            android:text="remove masternodes" />
+        <Button
+            android:id="@+id/ma_get_masternode_ping_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onGetMasternodePing"
+            android:text="get masternode ping" />
+        <Button
+            android:id="@+id/ma_masternode_activate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onActivateMasternode"
+            android:text="masternode activate" />
+
+
+    </LinearLayout>
+
+</ScrollView>
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BWCJ-sample-app.iml" filepath="$PROJECT_DIR$/.idea/modules/BWCJ-sample-app.iml" group="BWCJ-sample-app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bwsclientsample/bwsclientsample.iml" filepath="$PROJECT_DIR$/.idea/modules/bwsclientsample/bwsclientsample.iml" group="BWCJ-sample-app/bwsclientsample" />
+    </modules>
+  </component>
+</project>
