@@ -52,8 +52,11 @@ import org.bitcoinj.core.UnsafeByteArrayOutputStream;
 import org.bitcoinj.core.Utils;
 import java.util.Date;
 
+import org.bitcoinj.crypto.DeterministicKey;
 import org.openkuva.kuvabase.bwcj.domain.useCases.wallet.getWallet.GetWalletUseCase;
 import org.openkuva.kuvabase.bwcj.domain.utils.Credentials;
+
+import static org.openkuva.kuvabase.bwcj.domain.utils.DeriveUtils.deriveChildByPath;
 import static org.openkuva.kuvabase.bwcj.domain.utils.ListUtils.split;
 
 import org.bitcoinj.params.MainNetParams;
@@ -113,6 +116,8 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import org.openkuva.kuvabase.bwcj.data.entity.gson.wallet.AddressInfo;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private long CLIENT_VERSION = 1000000;
     private long CLIENT_SENTINEL_VERSION = 1000000;
@@ -160,11 +165,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         /*credentials = new Credentials("", new CopayersCryptUtils(
                 new VircleCoinTypeRetriever()));*/
 
-         credentials = new Credentials(split("bone casual observe virus prepare system aunt bamboo horror police vault floor"),"", new CopayersCryptUtils(
+         String words = "claim relax pond ripple maid kite secret siren unfold reduce key divide";
+         // String words = "bone casual observe virus prepare system aunt bamboo horror police vault floor";
+         credentials = new Credentials(split(words),"", new CopayersCryptUtils(
                 new VircleCoinTypeRetriever()));
 
 
         credentials.setNetworkParameters(MainNetParams.get());
+
+        AddressInfo a1 = credentials.getPrivateByPath("m/0/0");
+        AddressInfo a2 = credentials.getPrivateByPath("m/0/1");
+        AddressInfo a3 = credentials.getPrivateByPath("m/0/2");
+        AddressInfo a4 = credentials.getPrivateByPath("m/0/3");
+        System.out.println(a1);
+        System.out.println(a2);
+        System.out.println(a3);
+        System.out.println(a4);
     }
 
     private void setupPresenter() {

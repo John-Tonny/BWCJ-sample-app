@@ -270,6 +270,7 @@ public class MainActivityPresenter implements IMainActivityPresenter {
             String name1 = wallet.getWalletCore().getCopayers()[0].getName();
             String customData = wallet.getWalletCore().getCopayers()[0].getCustomData();
             System.out.println("aaa");
+
         } catch (Exception e) {
             view.showMessage(e.getMessage());
         }
@@ -312,11 +313,12 @@ public class MainActivityPresenter implements IMainActivityPresenter {
                     recoveryWalletFromMnemonicUseCase.execute(split(mnemonic), "", credentials.getWalletPrivateKey());
              */
 
-            /*IWallet response =
+            IWallet response =
                     recoveryWalletFromMnemonicUseCase.execute(split(mnemonic), "");
-             */
+            /*
             IWallet response =
                     getWalletUseCase.execute();
+            */
 
             String name = response.getWalletCore().getCopayers()[0].getName();
             view.updateWalletBalance(
@@ -364,8 +366,8 @@ public class MainActivityPresenter implements IMainActivityPresenter {
            IMasternodeCollateral[] txs = getMasternodeCollateralUseCase.execute();
             System.out.println(txs);
 
-            view.updateContract(getStrDate());
-            view.updateSecret(getDateTime());
+            view.updateContract(txs[0].getTxid());
+            view.updateSecret(String.valueOf(txs[0].getVout()));
 
         } catch (Exception e) {
             view.showMessage(e.getMessage());
