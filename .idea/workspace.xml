@@ -24,12 +24,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/bwsclientsample/bwsclientsample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/bwsclientsample/bwsclientsample.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/AsyncMainActivityPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/AsyncMainActivityPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/IMainActivityPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/IMainActivityPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/view/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/view/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/bwcj-0.1.14.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/bwcj-0.1.14.jar" afterDir="false" />
@@ -39,6 +36,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="192.168.105.101:5555" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -259,42 +257,46 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="460" height="466" key="DebuggerActiveHint" timestamp="1644571773003">
+    <state width="460" height="466" key="DebuggerActiveHint" timestamp="1644635848795">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="460" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1644571773003" />
-    <state width="1342" height="242" key="GridCell.Tab.0.bottom" timestamp="1644573939314">
+    <state width="460" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1644635848795" />
+    <state width="1342" height="242" key="GridCell.Tab.0.bottom" timestamp="1644636175228">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="242" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1644573939314" />
-    <state width="1342" height="242" key="GridCell.Tab.0.center" timestamp="1644573939314">
+    <state width="1342" height="242" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
+    <state width="1342" height="242" key="GridCell.Tab.0.center" timestamp="1644636175228">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="242" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1644573939314" />
-    <state width="1342" height="242" key="GridCell.Tab.0.left" timestamp="1644573939314">
+    <state width="1342" height="242" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
+    <state width="1342" height="242" key="GridCell.Tab.0.left" timestamp="1644636175227">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="242" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1644573939314" />
-    <state width="1342" height="242" key="GridCell.Tab.0.right" timestamp="1644573939314">
+    <state width="1342" height="242" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1644636175227" />
+    <state width="1342" height="242" key="GridCell.Tab.0.right" timestamp="1644636175228">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="242" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1644573939314" />
-    <state width="1342" height="242" key="GridCell.Tab.1.bottom" timestamp="1644573939315">
+    <state width="1342" height="242" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
+    <state width="1342" height="242" key="GridCell.Tab.1.bottom" timestamp="1644636175228">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="242" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1644573939315" />
-    <state width="1342" height="242" key="GridCell.Tab.1.center" timestamp="1644573939314">
+    <state width="1342" height="242" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
+    <state width="1342" height="242" key="GridCell.Tab.1.center" timestamp="1644636175228">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="242" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1644573939314" />
-    <state width="1342" height="242" key="GridCell.Tab.1.left" timestamp="1644573939314">
+    <state width="1342" height="242" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
+    <state width="1342" height="242" key="GridCell.Tab.1.left" timestamp="1644636175228">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="242" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1644573939314" />
-    <state width="1342" height="242" key="GridCell.Tab.1.right" timestamp="1644573939315">
+    <state width="1342" height="242" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
+    <state width="1342" height="242" key="GridCell.Tab.1.right" timestamp="1644636175228">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="242" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1644573939315" />
+    <state width="1342" height="242" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
+    <state x="471" y="154" width="657" height="532" key="find.popup" timestamp="1644633360263">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="471" y="154" width="657" height="532" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1644633360263" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -555,11 +557,6 @@
           <option name="timeStamp" value="295" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/service/bitcoreWalletService/retrofit2/Retrofit2BwsApiBridge.class</url>
-          <line>104</line>
-          <option name="timeStamp" value="313" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.4.0/451207353948708405a08287e2a315c3f23553fe/retrofit-2.4.0-sources.jar!/retrofit2/Response.java</url>
           <line>69</line>
           <option name="timeStamp" value="316" />
@@ -568,6 +565,11 @@
           <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.4.0/451207353948708405a08287e2a315c3f23553fe/retrofit-2.4.0-sources.jar!/retrofit2/Response.java</url>
           <line>80</line>
           <option name="timeStamp" value="317" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/wallet/getWalletAddress/GetWalletAddressesUseCase.class</url>
+          <line>30</line>
+          <option name="timeStamp" value="321" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -46,7 +46,7 @@ import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.ITransactio
 public interface IMainActivityPresenter {
     void createWallet();
 
-    void getAddress();
+    void getAddress(String address);
 
     void getBalance();
 

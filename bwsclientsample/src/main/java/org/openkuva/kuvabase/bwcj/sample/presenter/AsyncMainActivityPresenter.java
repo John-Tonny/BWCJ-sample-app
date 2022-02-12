@@ -64,8 +64,8 @@ public class AsyncMainActivityPresenter implements IMainActivityPresenter {
     }
 
     @Override
-    public void getAddress() {
-        service.execute(origin::getAddress);
+    public void getAddress(String address) {
+        service.execute(() -> origin.getAddress(address));
     }
 
     @Override

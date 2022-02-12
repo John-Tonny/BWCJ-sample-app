@@ -251,9 +251,9 @@ public class MainActivityPresenter implements IMainActivityPresenter {
     }
 
     @Override
-    public void getAddress() {
+    public void getAddress(String address) {
         try {
-            IAddressesResponse response = addressesUseCases.execute();
+            IAddressesResponse response = addressesUseCases.execute(address);
             view.updateWalletAddress(response.getAddress());
         } catch (Exception e) {
             view.showMessage(e.getMessage());
