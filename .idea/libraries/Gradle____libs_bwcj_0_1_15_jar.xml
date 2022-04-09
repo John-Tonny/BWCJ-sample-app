@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./libs/bwcj-0.1.15.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/bwcj-0.1.15.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

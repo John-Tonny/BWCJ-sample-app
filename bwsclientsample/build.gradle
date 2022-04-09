@@ -46,11 +46,14 @@ dependencies {
     // implementation 'org.openkuva.kuvabase:bwcj:0.1.10'
     // implementation project(':bwcj-0.1.14')
 
-    implementation 'com.google.guava:guava:18.0'
-    implementation files('..\\libs\\bwcj-0.1.14.jar')
-    implementation files('..\\libs\\dashj-core-0.15.jar')
+    implementation 'com.google.guava:guava:31.0.1-android'
+    implementation files('..\\libs\\bwcj-0.1.15.jar')
+    implementation files('..\\libs\\bitcoinj-core-0.16.1.jar')
+    // implementation files('..\\libs\\dashj-core-0.17.10.jar')
+    // implementation files('..\\libs\\dashj-core-0.15.jar')
     implementation files('..\\libs\\slf4j-api-1.7.20.jar')
     // implementation project(':slf4j-api-1.7.20')
+    implementation files('..\\libs\\bcprov-jdk15to18-1.69.jar')
 
     testImplementation 'junit:junit:4.12'
 
@@ -58,6 +61,7 @@ dependencies {
     implementation 'com.madgag.spongycastle:bctls-jdk15on:1.58.0.0'
     implementation group: 'org.mozilla', name: 'rhino', version: '1.7.10'
 
+    // implemention 'org.bouncycastle:bcprov-jdk15to18:1.69'
     // https://mvnrepository.com/artifact/com.madgag.spongycastle/core
     //implementation group: 'com.madgag.spongycastle', name: 'core', version: '1.51.0.0'
 }

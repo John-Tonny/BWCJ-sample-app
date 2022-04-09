@@ -37,6 +37,7 @@ import android.content.SharedPreferences;
 
 import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.NetworkParameters;
+import org.openkuva.kuvabase.bwcj.data.entity.gson.wallet.AddressInfo;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.credentials.ICredentials;
 import org.openkuva.kuvabase.bwcj.data.repository.exception.NotFoundException;
 
@@ -157,5 +158,15 @@ public class SharedPreferencesCredentials implements ICredentials {
             bytes[i] = Byte.parseByte(split[i]);
         }
         return bytes;
+    }
+
+    @Override
+    public AddressInfo getPrivateByPath(String path){
+        return null;
+    }
+
+    @Override
+    public AddressInfo getPrivateByPath(String path, boolean segwitMode){
+        return null;
     }
 }

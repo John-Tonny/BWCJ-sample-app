@@ -53,6 +53,10 @@ import org.bitcoinj.core.Utils;
 import java.util.Date;
 
 import org.bitcoinj.crypto.DeterministicKey;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewProRegTxp.AddNewProRegTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewProUpRegTxp.AddNewProUpRegTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewProUpServiceTxp.AddNewProUpServiceTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewProUpRevokeTxp.AddNewProUpRevokeTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.wallet.getWallet.GetWalletUseCase;
 import org.openkuva.kuvabase.bwcj.domain.utils.Credentials;
 
@@ -166,6 +170,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new VircleCoinTypeRetriever()));*/
 
          String words = "bone casual observe virus prepare system aunt bamboo horror police vault floor";
+         words = "rotate scrap radio awesome eight fee degree fee young tone board another";
          credentials = new Credentials(split(words),"", new CopayersCryptUtils(
                 new VircleCoinTypeRetriever()));
 
@@ -180,6 +185,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         System.out.println(a2);
         System.out.println(a3);
         System.out.println(a4);
+
     }
 
     private void setupPresenter() {
@@ -289,7 +295,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         credentials,
                                         new CopayersCryptUtils(
                                                 new VircleCoinTypeRetriever()),
-                                        bitcoreWalletServerAPI)),
+                                        bitcoreWalletServerAPI),
+                                new AddNewProRegTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new VircleCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewProUpRegTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new VircleCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewProUpServiceTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new VircleCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewProUpRevokeTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new VircleCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI)
+                                ),
                         Executors.newCachedThreadPool());
     }
 

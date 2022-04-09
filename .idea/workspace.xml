@@ -13,6 +13,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4c73858-a746-4b87-9f09-4e87fbcf284a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____libs_bcprov_jdk15to18_1_69_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____libs_bitcoinj_core_0_16_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____libs_bwcj_0_1_15_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_3_0_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_errorprone_error_prone_annotations_2_7_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_failureaccess_1_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_guava_31_0_1_android_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_j2objc_j2objc_annotations_1_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_checkerframework_checker_compat_qual_2_5_5_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_checkerframework_checker_qual_3_12_0_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
@@ -24,19 +36,32 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____libs_bwcj_0_1_14_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____libs_dashj_core_0_15_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_guava_18_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/bwsclientsample/bwsclientsample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/bwsclientsample/bwsclientsample.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/AsyncMainActivityPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/AsyncMainActivityPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/IMainActivityPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/IMainActivityPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwsclientsample/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/ApiUrls.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/ApiUrls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/model/credentials/SharedPreferencesCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/model/credentials/SharedPreferencesCredentials.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/view/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/view/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/bwcj-0.1.14.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/bwcj-0.1.14.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/bwcj-0.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/dashj-core-0.15.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/dashj-core-0.15.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="192.168.105.101:5555" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[192.168.36.101:5555]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -56,17 +81,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BWCJ-sample-app" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BWCJ-sample-app" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -85,9 +100,10 @@
     <property name="DEBUGGABLE_DEVICE" value="unknown-samsung-192.168.242.101:5555" />
     <property name="DEBUGGABLE_PROCESS" value="org.openkuva.kuvabase.bwcj.sample" />
     <property name="DEBUGGER_ID" value="Auto" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="192.168.119.101:5555" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-06-22T07:33:12.495Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="192.168.172.101:5555" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2022-04-07T06:37:15.450Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
@@ -98,21 +114,21 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="PsdUISettings">
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RunManager" selected="Android App.bwsclientsample">
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,13 +142,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="bwsclientsample" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="bwsclientsample" />
       <option name="DEPLOY" value="true" />
@@ -140,6 +149,8 @@
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -147,10 +158,10 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
       <Auto>
         <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
         <option name="SHOW_STATIC_VARS" value="true" />
@@ -175,11 +186,16 @@
       </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -206,8 +222,17 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
@@ -224,7 +249,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -237,6 +262,7 @@
       <updated>1620981825540</updated>
       <workItem from="1644565613935" duration="1081000" />
       <workItem from="1644571232178" duration="24000" />
+      <workItem from="1648285376300" duration="35000" />
     </task>
     <servers />
   </component>
@@ -248,55 +274,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="460" height="466" key="DebuggerActiveHint" timestamp="1644635848795">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="460" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1644635848795" />
-    <state width="1342" height="242" key="GridCell.Tab.0.bottom" timestamp="1644636175228">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1342" height="242" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
-    <state width="1342" height="242" key="GridCell.Tab.0.center" timestamp="1644636175228">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1342" height="242" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
-    <state width="1342" height="242" key="GridCell.Tab.0.left" timestamp="1644636175227">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1342" height="242" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1644636175227" />
-    <state width="1342" height="242" key="GridCell.Tab.0.right" timestamp="1644636175228">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1342" height="242" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
-    <state width="1342" height="242" key="GridCell.Tab.1.bottom" timestamp="1644636175228">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1342" height="242" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
-    <state width="1342" height="242" key="GridCell.Tab.1.center" timestamp="1644636175228">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1342" height="242" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
-    <state width="1342" height="242" key="GridCell.Tab.1.left" timestamp="1644636175228">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1342" height="242" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
-    <state width="1342" height="242" key="GridCell.Tab.1.right" timestamp="1644636175228">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1342" height="242" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1644636175228" />
-    <state x="471" y="154" width="657" height="532" key="find.popup" timestamp="1644633360263">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="471" y="154" width="657" height="532" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1644633360263" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -313,22 +296,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>544</line>
+          <line>722</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>545</line>
+          <line>723</line>
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>546</line>
+          <line>724</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>547</line>
+          <line>725</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -338,67 +321,57 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>619</line>
-          <option name="timeStamp" value="137" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>617</line>
+          <line>795</line>
           <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>608</line>
+          <line>786</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>621</line>
-          <option name="timeStamp" value="147" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>508</line>
+          <line>686</line>
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>512</line>
+          <line>690</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>513</line>
+          <line>691</line>
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>514</line>
+          <line>692</line>
           <option name="timeStamp" value="154" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>515</line>
+          <line>693</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>517</line>
+          <line>695</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>579</line>
+          <line>757</line>
           <option name="timeStamp" value="158" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>577</line>
+          <line>755</line>
           <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>492</line>
+          <line>670</line>
           <option name="timeStamp" value="163" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -413,22 +386,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>244</line>
+          <line>286</line>
           <option name="timeStamp" value="173" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>245</line>
+          <line>287</line>
           <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>246</line>
+          <line>288</line>
           <option name="timeStamp" value="175" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>243</line>
+          <line>285</line>
           <option name="timeStamp" value="181" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -453,12 +426,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>274</line>
-          <option name="timeStamp" value="234" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>248</line>
+          <line>290</line>
           <option name="timeStamp" value="240" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -468,37 +436,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>660</line>
-          <option name="timeStamp" value="245" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>663</line>
-          <option name="timeStamp" value="246" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/wallet/joinWalletInCreation/JoinWalletInCreationUseCase.class</url>
-          <line>35</line>
-          <option name="timeStamp" value="265" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>645</line>
-          <option name="timeStamp" value="266" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/wallet/joinWalletInCreation/JoinWalletInCreationUseCase.class</url>
-          <line>43</line>
-          <option name="timeStamp" value="268" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>281</line>
+          <line>326</line>
           <option name="timeStamp" value="271" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>298</line>
+          <line>344</line>
           <option name="timeStamp" value="275" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -525,11 +468,6 @@
           <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/transactionProposal/signTxp/SignTxpUseCase.class</url>
           <line>116</line>
           <option name="timeStamp" value="288" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>jar://$PROJECT_DIR$/libs/dashj-core-0.15.jar!/org/bitcoinj/core/Transaction.class</url>
-          <line>756</line>
-          <option name="timeStamp" value="289" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/transactionProposal/signTxp/SignTxpUseCase.class</url>
@@ -562,26 +500,161 @@
           <option name="timeStamp" value="316" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.4.0/451207353948708405a08287e2a315c3f23553fe/retrofit-2.4.0-sources.jar!/retrofit2/Response.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="317" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.14.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/wallet/getWalletAddress/GetWalletAddressesUseCase.class</url>
           <line>30</line>
           <option name="timeStamp" value="321" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>368</line>
+          <option name="timeStamp" value="322" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/dashj-core-0.15.jar!/org/bitcoinj/core/Utils.class</url>
+          <line>707</line>
+          <option name="timeStamp" value="336" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/dashj-core-0.15.jar!/org/bitcoinj/core/Utils.class</url>
+          <line>708</line>
+          <option name="timeStamp" value="339" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/dashj-core-0.17.10.jar!/org/bitcoinj/core/ECKey.class</url>
+          <line>228</line>
+          <option name="timeStamp" value="364" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/dashj-core-0.17.10.jar!/org/bitcoinj/core/ECKey.class</url>
+          <line>207</line>
+          <option name="timeStamp" value="365" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/dashj-core-0.17.10.jar!/org/bitcoinj/core/ECKey.class</url>
+          <line>211</line>
+          <option name="timeStamp" value="366" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/dashj-core-0.17.10.jar!/org/bitcoinj/crypto/DeterministicKey.class</url>
+          <line>89</line>
+          <option name="timeStamp" value="367" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bitcoinj-core-0.16.1.jar!/org/bitcoinj/core/Utils.class</url>
+          <line>433</line>
+          <option name="timeStamp" value="381" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.15.jar!/org/openkuva/kuvabase/bwcj/domain/utils/masternode/ProRegTx.class</url>
+          <line>86</line>
+          <option name="timeStamp" value="389" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.15.jar!/org/openkuva/kuvabase/bwcj/data/entity/gson/transaction/GsonTransactionProposal.class</url>
+          <line>182</line>
+          <option name="timeStamp" value="406" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>309</line>
+          <option name="timeStamp" value="407" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.15.jar!/org/openkuva/kuvabase/bwcj/domain/utils/transactions/TransactionBuilder.class</url>
+          <line>42</line>
+          <option name="timeStamp" value="423" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bitcoinj-core-0.16.1.jar!/org/bitcoinj/core/Transaction.class</url>
+          <line>981</line>
+          <option name="timeStamp" value="449" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bitcoinj-core-0.16.1.jar!/org/bitcoinj/core/Transaction.class</url>
+          <line>980</line>
+          <option name="timeStamp" value="455" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.15.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/transactionProposal/addNewProRegTxp/AddNewProRegTxpUseCase.class</url>
+          <line>56</line>
+          <option name="timeStamp" value="460" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>528</line>
+          <option name="timeStamp" value="461" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>530</line>
+          <option name="timeStamp" value="462" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>443</line>
+          <option name="timeStamp" value="464" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>444</line>
+          <option name="timeStamp" value="465" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>589</line>
+          <option name="timeStamp" value="468" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>446</line>
+          <option name="timeStamp" value="469" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>578</line>
+          <option name="timeStamp" value="476" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.15.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/transactionProposal/addNewProUpRegTxp/AddNewProUpRegTxpUseCase.class</url>
+          <line>104</line>
+          <option name="timeStamp" value="477" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>576</line>
+          <option name="timeStamp" value="481" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>303</line>
+          <option name="timeStamp" value="535" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>324</line>
+          <option name="timeStamp" value="537" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>492</line>
+          <option name="timeStamp" value="539" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>485</line>
+          <option name="timeStamp" value="542" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>487</line>
+          <option name="timeStamp" value="544" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="bwsclientsample">
-        <watch expression="bos.toByteArray()" language="JAVA" />
-        <watch expression="privs.get(0).toAddress()" language="JAVA" />
-        <watch expression="response.body()" language="JAVA" />
-        <watch expression="getMasternodesUseCase" language="JAVA" />
-        <watch expression="re" language="JAVA" />
-        <watch expression="result.getPrivKey().toString(16)" language="JAVA" />
-      </configuration>
-    </watches-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

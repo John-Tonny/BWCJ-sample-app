@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: ./libs/dashj-core-0.15.jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/dashj-core-0.15.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

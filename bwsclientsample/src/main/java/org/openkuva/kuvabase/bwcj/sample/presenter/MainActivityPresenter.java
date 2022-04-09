@@ -44,6 +44,10 @@ import org.bitcoinj.crypto.HDKeyDerivation;
 import org.bitcoinj.crypto.MnemonicCode;
 import org.bitcoinj.params.MainNetParams;
 import org.bitcoinj.wallet.DeterministicSeed;
+import org.openkuva.kuvabase.bwcj.data.entity.gson.masternode.MasternodeCollateralPro;
+import org.openkuva.kuvabase.bwcj.data.entity.gson.masternode.MasternodePro;
+import org.openkuva.kuvabase.bwcj.data.entity.interfaces.masternode.IMasternodePro;
+import org.openkuva.kuvabase.bwcj.data.entity.gson.transaction.GsonInput;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.copayer.ICopayer;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.credentials.ICredentials;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.masternode.IMasternode;
@@ -53,6 +57,7 @@ import org.openkuva.kuvabase.bwcj.data.entity.interfaces.masternode.IMasternodeP
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.masternode.IMasternodeRemove;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.masternode.IMasternodeStatus;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.IAtomicswapInitiateData;
+import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.IInput;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.ITransactionProposal;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.wallet.IWallet;
 import org.openkuva.kuvabase.bwcj.data.entity.pojo.transaction.AtomicswapInitiateData;
@@ -98,6 +103,7 @@ import org.openkuva.kuvabase.bwcj.domain.utils.atomicswap.CreateContract;
 import org.openkuva.kuvabase.bwcj.domain.utils.atomicswap.ExtractContract;
 import org.openkuva.kuvabase.bwcj.domain.utils.atomicswap.RedeemContract;
 import org.openkuva.kuvabase.bwcj.domain.utils.atomicswap.RefundContract;
+import org.openkuva.kuvabase.bwcj.domain.utils.masternode.ProRegTx;
 import org.openkuva.kuvabase.bwcj.domain.utils.messageEncrypt.SjclMessageEncryptor;
 import org.openkuva.kuvabase.bwcj.sample.ApiUrls;
 import org.openkuva.kuvabase.bwcj.sample.view.IMainActivityView;
@@ -118,6 +124,10 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.masternode.signMasternode.Sign
 import org.openkuva.kuvabase.bwcj.domain.useCases.masternode.broadcastMasternode.BroadcastMasternodeUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.masternode.ping.GetMasternodePingUseCase;
 
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewProRegTxp.IAddNewProRegTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewProUpRegTxp.IAddNewProUpRegTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewProUpServiceTxp.IAddNewProUpServiceTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewProUpRevokeTxp.IAddNewProUpRevokeTxpUseCase;
 
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
@@ -168,7 +178,10 @@ public class MainActivityPresenter implements IMainActivityPresenter {
     private final IAddNewAtomicswapRefundTxpUseCase addNewAtomicswapRefundTxpUseCase;
     private final IGetAllPendingAtomicswapTxpsUseCase getAllPendingAtomicswapTxpsUseCase;
     private final IGetWalletUseCase getWalletUseCase;
-
+    private final IAddNewProRegTxpUseCase addNewProRegTxpUseCase;
+    private final IAddNewProUpRegTxpUseCase addNewProUpRegTxpUseCase;
+    private final IAddNewProUpServiceTxpUseCase addNewProUpServiceTxpUseCase;
+    private final IAddNewProUpRevokeTxpUseCase addNewProUpRevokeTxpUseCase;
 
     public MainActivityPresenter(
             IMainActivityView view,
@@ -200,7 +213,11 @@ public class MainActivityPresenter implements IMainActivityPresenter {
             IAddNewAtomicswapRedeemTxpUseCase addNewAtomicswapRedeemTxpUseCase,
             IAddNewAtomicswapRefundTxpUseCase addNewAtomicswapRefundTxpUseCase,
             IGetAllPendingAtomicswapTxpsUseCase getAllPendingAtomicswapTxpsUseCase,
-            IGetWalletUseCase getWalletUseCase
+            IGetWalletUseCase getWalletUseCase,
+            IAddNewProRegTxpUseCase addNewProRegTxpUseCase,
+            IAddNewProUpRegTxpUseCase addNewProUpRegTxpUseCase,
+            IAddNewProUpServiceTxpUseCase addNewProUpServiceTxpUseCase,
+            IAddNewProUpRevokeTxpUseCase addNewProUpRevokeTxpUseCase
             ) {
 
         this.view = view;
@@ -234,6 +251,10 @@ public class MainActivityPresenter implements IMainActivityPresenter {
         this.addNewAtomicswapRefundTxpUseCase = addNewAtomicswapRefundTxpUseCase;
         this.getAllPendingAtomicswapTxpsUseCase = getAllPendingAtomicswapTxpsUseCase;
         this.getWalletUseCase = getWalletUseCase;
+        this.addNewProRegTxpUseCase = addNewProRegTxpUseCase;
+        this.addNewProUpRegTxpUseCase = addNewProUpRegTxpUseCase;
+        this.addNewProUpServiceTxpUseCase = addNewProUpServiceTxpUseCase;
+        this.addNewProUpRevokeTxpUseCase = addNewProUpRevokeTxpUseCase;
     }
 
     @Override
@@ -295,10 +316,12 @@ public class MainActivityPresenter implements IMainActivityPresenter {
                              */
                             msg,
                             true);
+
             ITransactionProposal publishedTxp = publishTxpUseCase.execute(proposal);
             ITransactionProposal signTxp = signTxpUseCase.execute(publishedTxp);
-            // broadcastTxpUseCase.execute(signTxp.getId());
+            ITransactionProposal broadcastTxp =  broadcastTxpUseCase.execute(signTxp.getId());
             view.updateSendDashResult("Tx done!");
+            System.out.println(broadcastTxp.getTxid());
         } catch (Exception e) {
             view.showMessage(e.getMessage());
         }
@@ -366,9 +389,51 @@ public class MainActivityPresenter implements IMainActivityPresenter {
            IMasternodeCollateral[] txs = getMasternodeCollateralUseCase.execute();
             System.out.println(txs);
 
-            view.updateContract(txs[0].getTxid());
-            view.updateSecret(String.valueOf(txs[0].getVout()));
+            if(txs.length>0) {
+                view.updateContract(txs[0].getTxid());
+                view.updateSecret(String.valueOf(txs[0].getVout()));
+            }
+            /*
+            String collateradId = "f6028461dcc19ac1b1dae4fc6e242c3b06e9f9f1edcd746236b073c84c32a2be";
+            int collateralIndex = 1;
+            String collateralAddress = "sys1qpr64vdg9yte0kw0dh70vjkts345qwwty5879ej";
+            String path = "m/0/138";
+            String collateralPrivKey = "9cd56e5dabd7098e4034c020625749a00b6906f801a3464184bac2df7914c90f";
+            */
+            String host = "8.136.121.88";
+            // String host = "106.55.177.193";
+            int port = 9090;
+            String masternodePrivKey = "62051340e011dff7e6a1f152dd1de037992cd0612057dc04fc01bd9933f9f3e0";
+            String masternodePubKey = "03107d379a496b89c5a38d3dbefaf92dd60bfcd41a99d5cee2bcffade091efc07ed7e142814d6e060b4986ca1a8040b5";
 
+            String ownerAddr = "sys1q7966wg9je2tj6x4kfhy8hlh28hgthjwrdqzpr5";
+            String voteAddr = "sys1q7966wg9je2tj6x4kfhy8hlh28hgthjwrdqzpr5";
+            String payAddr = "sys1qg50gqqwu7g0g2xzct2wmhdks0qrdw367tqfmhe";
+            GsonInput input = new GsonInput();
+            String txid = "8e0fc358a92b373639321e5d6110abf9b37e73163da8a4fbe5b3e23f7b1386fd";
+            input.setInput(txid, 0);
+            GsonInput[] inputs = new GsonInput[1];
+            inputs[0] = input;
+            // MasternodeCollateralPro masternodeCollateralPro = new MasternodeCollateralPro(collateradId, collateralIndex, collateralPrivKey, host, port, masternodePrivKey, masternodePubKey, ownerAddr, voteAddr, payAddr, 0);
+            // MasternodeCollateralPro masternodeCollateralPro = new MasternodeCollateralPro(collateradId, collateralIndex, collateralAddress, path, host, port, masternodePrivKey, masternodePubKey, this.credentials);
+            // ProRegTx proRegTx = new ProRegTx(inputs, collateradId, collateralIndex, collateralPrivKey, host, port, masternodePubKey, ownerAddr, voteAddr, payAddr, 0, this.credentials.getNetworkParameters());
+            // String msg = proRegTx.getOutScripts(true);
+
+            MasternodeCollateralPro masternodeCollateralPro = new MasternodeCollateralPro(
+                    txs[0].getTxid(),
+                    txs[0].getVout(), txs[0].getAddress(), txs[0].getPath(), host, port, masternodePrivKey, masternodePubKey, this.credentials);
+
+            /*
+            MasternodeCollateralPro masternodeCollateralPro = new MasternodeCollateralPro(
+                    txs[0].getTxid(),
+                    txs[0].getVout(), txs[0].getAddress(), txs[0].getPath(), host, port, masternodePrivKey, masternodePubKey, this.credentials, ownerAddr,voteAddr, payAddr, 0);
+            */
+            ITransactionProposal proposal = addNewProRegTxpUseCase.execute("", true, masternodeCollateralPro);
+            ITransactionProposal publishedTxp = publishTxpUseCase.execute(proposal);
+            ITransactionProposal signTxp = signTxpUseCase.execute(publishedTxp);
+            ITransactionProposal broadcastTxp = broadcastTxpUseCase.execute(signTxp.getId());
+            System.out.println(broadcastTxp.getTxid());
+            System.out.println("finish proRegTx");
         } catch (Exception e) {
             view.showMessage(e.getMessage());
         }
@@ -406,9 +471,31 @@ public class MainActivityPresenter implements IMainActivityPresenter {
     public  void getMasternodes(String coin, String txid, String address, String payee) {
         try {
             IMasternode[] txs = getMasternodesUseCase.execute(coin, txid, address, payee);
-            System.out.println(txs);
+            // System.out.println(txs);
+            if(txs.length>0) {
+                // proUpReg
+                // String masternodePrivKey = "34372216419c23e933e7f847217a49698399f21db2cff4fc57f1cecc283291ef";
+                // String masternodePubKey = "873a70bff1ef82cf676f62dd5e174704e3fdfd475b6385a8e080a29020f950839848b3286da40bc30473108c6bbce440";
+                // ITransactionProposal proposal = addNewProUpRegTxpUseCase.execute("", true, txid, masternodePubKey, masternodePrivKey);
 
-        } catch (Exception e) {
+                // proUpService
+                 String address1 = "47.98.45.255:9090";
+                ITransactionProposal proposal = addNewProUpServiceTxpUseCase.execute("", true, txid, address1);
+
+                // proRevoke
+                // ITransactionProposal proposal = addNewProUpRevokeTxpUseCase.execute("", true, txid);
+
+                ITransactionProposal publishedTxp = publishTxpUseCase.execute(proposal);
+                ITransactionProposal signTxp = signTxpUseCase.execute(publishedTxp);
+                ITransactionProposal broadcastTxp = broadcastTxpUseCase.execute(signTxp.getId());
+                System.out.println(broadcastTxp.getTxid());
+                System.out.println("finish proUpRegTx");
+
+
+            }
+
+
+            } catch (Exception e) {
             view.showMessage(e.getMessage());
         }
     }
@@ -462,7 +549,7 @@ public class MainActivityPresenter implements IMainActivityPresenter {
 
     public void test_atomicswap() {
         String pubKey= "0241137b959dd5c65cabd7f241869b3e73c6df3129bd2f415a644cca9665bf7bcd";
-        String bb = ECKey.fromPublicOnly(Utils.HEX.decode(pubKey)).toAddress(this.credentials.getNetworkParameters()).toBase58();
+        // String bb = ECKey.fromPublicOnly(Utils.HEX.decode(pubKey)).toAddress(this.credentials.getNetworkParameters()).toBase58();
 
         NetworkParameters parameters =  this.credentials.getNetworkParameters();
         ECKey ecKey = new ECKey();
