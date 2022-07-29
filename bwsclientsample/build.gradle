@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "org.openkuva.kuvabase.bwcj.sample"
-        minSdkVersion 19
-        targetSdkVersion 27
+        minSdkVersion 26
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -19,8 +19,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 
@@ -33,6 +33,8 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation ('org.web3j:core:4.8.8-android')
+
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
 
@@ -40,30 +42,25 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
 
-    // implementation 'org.dashj:dashj-core:0.14.4.4'
-    // implementation project(':dashj-core-0.15')
-
-    // implementation 'org.openkuva.kuvabase:bwcj:0.1.10'
-    // implementation project(':bwcj-0.1.14')
-
     implementation 'com.google.guava:guava:31.0.1-android'
+
     implementation files('..\\libs\\bwcj-0.1.15.jar')
     implementation files('..\\libs\\bitcoinj-core-0.16.1.jar')
-    // implementation files('..\\libs\\dashj-core-0.17.10.jar')
-    // implementation files('..\\libs\\dashj-core-0.15.jar')
-    implementation files('..\\libs\\slf4j-api-1.7.20.jar')
+    // implementation files('..\\libs\\slf4j-api-1.7.20.jar')
     // implementation project(':slf4j-api-1.7.20')
-    implementation files('..\\libs\\bcprov-jdk15to18-1.69.jar')
+    // implementation files('..\\libs\\bcprov-jdk15to18-1.69.jar')
 
     testImplementation 'junit:junit:4.12'
 
+    implementation group:"org.slf4j" , name: "slf4j-api", version: "1.7.20"
     implementation 'com.sun.org.apache:jaxp-ri:1.4'
     implementation 'com.madgag.spongycastle:bctls-jdk15on:1.58.0.0'
     implementation group: 'org.mozilla', name: 'rhino', version: '1.7.10'
 
-    // implemention 'org.bouncycastle:bcprov-jdk15to18:1.69'
+    // implementation 'org.bouncycastle:bcprov-jdk15to18:1.69'
     // https://mvnrepository.com/artifact/com.madgag.spongycastle/core
     //implementation group: 'com.madgag.spongycastle', name: 'core', version: '1.51.0.0'
+
 }
 
 /*

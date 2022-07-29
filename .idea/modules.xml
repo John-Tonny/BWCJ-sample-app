@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BWCJ-sample-app.iml" filepath="$PROJECT_DIR$/.idea/modules/BWCJ-sample-app.iml" group="BWCJ-sample-app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bwsclientsample/bwsclientsample.iml" filepath="$PROJECT_DIR$/.idea/modules/bwsclientsample/bwsclientsample.iml" group="BWCJ-sample-app/bwsclientsample" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BWCJ-sample-app.iml" filepath="$PROJECT_DIR$/.idea/modules/BWCJ-sample-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bwsclientsample/BWCJ-sample-app.bwsclientsample.iml" filepath="$PROJECT_DIR$/.idea/modules/bwsclientsample/BWCJ-sample-app.bwsclientsample.iml" />
     </modules>
   </component>
 </project>

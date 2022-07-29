@@ -94,6 +94,11 @@ public class MainActivityView implements IMainActivityView {
     }
 
     @Override
+    public void updateMnemonic(String result) {
+        tvMnemonic.setText(result);
+    }
+
+    @Override
     public void showMessage(String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }

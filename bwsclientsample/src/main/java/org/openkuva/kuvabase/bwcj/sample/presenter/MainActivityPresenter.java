@@ -79,6 +79,9 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAtom
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAtomicswapRedeemTxp.IAddNewAtomicswapRedeemTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAtomicswapRefundTxp.IAddNewAtomicswapRefundTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewTxp.IAddNewTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAssetSendTxp.IAddNewAssetSendTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAssetBurnTxp.IAddNewAssetBurnTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAssetMintTxp.IAddNewAssetMintTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.broadcastTxp.IBroadcastTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.deleteAllPendingTxProposals.IDeleteAllPendingTxpsUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.getAllPendingAtomicswapTxProposals.IGetAllPendingAtomicswapTxpsUseCase;
@@ -98,6 +101,7 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.getTxHistory.IGetTxHistoryUseC
 import org.openkuva.kuvabase.bwcj.domain.utils.CopayersCryptUtils;
 import org.openkuva.kuvabase.bwcj.domain.utils.Credentials;
 import org.openkuva.kuvabase.bwcj.domain.utils.DeriveUtils;
+import org.openkuva.kuvabase.bwcj.domain.utils.EthCoinTypeRetriever;
 import org.openkuva.kuvabase.bwcj.domain.utils.VircleCoinTypeRetriever;
 import org.openkuva.kuvabase.bwcj.domain.utils.atomicswap.CreateContract;
 import org.openkuva.kuvabase.bwcj.domain.utils.atomicswap.ExtractContract;
@@ -128,6 +132,11 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewProR
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewProUpRegTxp.IAddNewProUpRegTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewProUpServiceTxp.IAddNewProUpServiceTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewProUpRevokeTxp.IAddNewProUpRevokeTxpUseCase;
+
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewApproveTxp.IAddNewApproveTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewFreezeBurnTxp.IAddNewFreezeBurnTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewRelayTxp.IAddNewRelayTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewRelayAssetTxp.IAddNewRelayAssetTxpUseCase;
 
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
@@ -182,6 +191,14 @@ public class MainActivityPresenter implements IMainActivityPresenter {
     private final IAddNewProUpRegTxpUseCase addNewProUpRegTxpUseCase;
     private final IAddNewProUpServiceTxpUseCase addNewProUpServiceTxpUseCase;
     private final IAddNewProUpRevokeTxpUseCase addNewProUpRevokeTxpUseCase;
+    private final IAddNewAssetSendTxpUseCase addNewAssetSendTxpUseCase;
+    private final IAddNewAssetBurnTxpUseCase addNewAssetBurnTxpUseCase;
+    private final IAddNewAssetMintTxpUseCase addNewAssetMintTxpUseCase;
+    private final IAddNewApproveTxpUseCase addNewApproveTxpUseCase;
+    private final IAddNewFreezeBurnTxpUseCase addNewFreezeBurnTxpUseCase;
+    private final IAddNewRelayTxpUseCase addNewRelayTxpUseCase;
+    private final IAddNewRelayAssetTxpUseCase addNewRelayAssetTxpUseCase;
+
 
     public MainActivityPresenter(
             IMainActivityView view,
@@ -217,7 +234,14 @@ public class MainActivityPresenter implements IMainActivityPresenter {
             IAddNewProRegTxpUseCase addNewProRegTxpUseCase,
             IAddNewProUpRegTxpUseCase addNewProUpRegTxpUseCase,
             IAddNewProUpServiceTxpUseCase addNewProUpServiceTxpUseCase,
-            IAddNewProUpRevokeTxpUseCase addNewProUpRevokeTxpUseCase
+            IAddNewProUpRevokeTxpUseCase addNewProUpRevokeTxpUseCase,
+            IAddNewAssetSendTxpUseCase addNewAssetSendTxpUseCase,
+            IAddNewAssetBurnTxpUseCase addNewAssetBurnTxpUseCase,
+            IAddNewAssetMintTxpUseCase addNewAssetMintTxpUseCase,
+            IAddNewApproveTxpUseCase addNewApproveTxpUseCase,
+            IAddNewFreezeBurnTxpUseCase addNewFreezeBurnTxpUseCase,
+            IAddNewRelayTxpUseCase addNewRelayTxpUseCase,
+            IAddNewRelayAssetTxpUseCase addNewRelayAssetTxpUseCase
             ) {
 
         this.view = view;
@@ -255,6 +279,15 @@ public class MainActivityPresenter implements IMainActivityPresenter {
         this.addNewProUpRegTxpUseCase = addNewProUpRegTxpUseCase;
         this.addNewProUpServiceTxpUseCase = addNewProUpServiceTxpUseCase;
         this.addNewProUpRevokeTxpUseCase = addNewProUpRevokeTxpUseCase;
+
+        this.addNewAssetSendTxpUseCase = addNewAssetSendTxpUseCase;
+        this.addNewAssetBurnTxpUseCase = addNewAssetBurnTxpUseCase;
+        this.addNewAssetMintTxpUseCase = addNewAssetMintTxpUseCase;
+
+        this.addNewApproveTxpUseCase = addNewApproveTxpUseCase;
+        this.addNewFreezeBurnTxpUseCase = addNewFreezeBurnTxpUseCase;
+        this.addNewRelayTxpUseCase = addNewRelayTxpUseCase;
+        this.addNewRelayAssetTxpUseCase = addNewRelayAssetTxpUseCase;
     }
 
     @Override
@@ -299,23 +332,103 @@ public class MainActivityPresenter implements IMainActivityPresenter {
 
     @Override
     public void sendDashToAddress(String address, String dash, String msg) {
+        //String tokenAddress = "0x8ffb6ceeb3c41f6286eedbc97df6d711ae00bff6";
+        long assetGuid = 3235835254L;
+        assetGuid = 3486931473L;
         try {
             // IRateResponse rate = getRateUseCases.execute();
             ITransactionProposal proposal =
                     postTransaction.execute(
+                            // tokenAddress,
                             address,
-                            Coin.parseCoin(dash).value,
+                            dash,
                             msg,
                             false,
-                            /*new CustomData(
-                                    rate.getRate(),
-                                    "send",
-                                    null,
-                                    null,
-                                    null),
-                             */
                             msg,
                             true);
+            // 55a0a3ba156264b671fb7ac321c4d8b33a63341217e758e5912006a38bc720a3
+
+            /*
+            ITransactionProposal proposal =
+                    addNewAssetSendTxpUseCase.execute(
+                            assetGuid,
+                            address,
+                            dash,
+                            msg,
+                            false,
+                            msg,
+                            true);
+            */
+
+            /*
+            //  eth to sys  step1
+            ITransactionProposal proposal =
+                    addNewApproveTxpUseCase.execute(
+                            assetGuid,
+                            dash);
+            // 0x6d987ca3cd7a5184af3dc9d461eed54a56f2673e7ba09406198f2628fc53a0f9
+            */
+
+            /*
+            // eth to sys step2
+            String sysAddr = "sys1qvxd0jddvyxsqlahz8fedc0dl26f79knert6wzp";
+            ITransactionProposal proposal =
+                    addNewFreezeBurnTxpUseCase.execute(
+                            assetGuid,
+                            sysAddr,
+                            dash);
+            // 0x1f9de8d8301542d003c86ba39aaff64f6d7294ae7f4d69964c72c00dc9fa590f
+            */
+
+            /*
+            // eth to sys step3
+            String ethtxid = "0x1f9de8d8301542d003c86ba39aaff64f6d7294ae7f4d69964c72c00dc9fa590f";
+            ITransactionProposal proposal =
+                    addNewAssetMintTxpUseCase.execute(
+                            assetGuid,
+                            ethtxid);
+            // a032902a6b19436d2f3e2bd217b547ab5484b554e5429eb131bfd4b4898e75ba
+            */
+
+            /*
+            // sys to eth step1
+            String ethAddr = "58CfA3CD076f8c79E411fDB87E473Dd8216713F0";
+            ITransactionProposal proposal =
+                    addNewAssetBurnTxpUseCase.execute(
+                            assetGuid,
+                            ethAddr,
+                            dash);
+            // f4932d2df7356ac721e6901d22837dd56fafc95745df75d3e283fde22ea36735
+            */
+
+            /*
+            // sys to eth step2
+            String txid = "f4932d2df7356ac721e6901d22837dd56fafc95745df75d3e283fde22ea36735";
+            ITransactionProposal proposal =
+                    addNewRelayTxpUseCase.execute(
+                            assetGuid,
+                            txid);
+            // 0x6f8b88df111bd2da15e6483aefc06add010e23bff22a274130b9868f40f0526d
+            */
+
+            /*
+            String txid = "a032902a6b19436d2f3e2bd217b547ab5484b554e5429eb131bfd4b4898e75ba";
+            assetGuid = 3160230534L;
+            ITransactionProposal proposal =
+                    addNewRelayAssetTxpUseCase.execute(
+                            assetGuid,
+                            txid);
+            */
+
+            /*
+            ITransactionProposal proposal =
+                    addNewAssetSendTxpUseCase.execute(
+                            assetGuid,
+                            address,
+                            dash
+                            );
+            // 1e226838b3c68175d0e2a9eccd1c09f374971ae24a763f12bc585acea0671732
+            */
 
             ITransactionProposal publishedTxp = publishTxpUseCase.execute(proposal);
             ITransactionProposal signTxp = signTxpUseCase.execute(publishedTxp);
@@ -479,7 +592,7 @@ public class MainActivityPresenter implements IMainActivityPresenter {
                 // ITransactionProposal proposal = addNewProUpRegTxpUseCase.execute("", true, txid, masternodePubKey, masternodePrivKey);
 
                 // proUpService
-                 String address1 = "47.98.45.255:9090";
+                 String address1 = "47.99.156.96:9090";
                 ITransactionProposal proposal = addNewProUpServiceTxpUseCase.execute("", true, txid, address1);
 
                 // proRevoke
@@ -579,7 +692,8 @@ public class MainActivityPresenter implements IMainActivityPresenter {
             ITransactionProposal proposal=
                     addNewAtomicswapInitiateTxpUseCase.execute(
                             address,
-                            Coin.parseCoin(dash).value,
+                            dash,
+                            // Coin.parseCoin(dash).value,
                             false,
                             /*
                             new CustomData(
@@ -612,7 +726,8 @@ public class MainActivityPresenter implements IMainActivityPresenter {
             ITransactionProposal proposal=
                     addNewAtomicswapParticipateTxpUseCase.execute(
                             address,
-                            Coin.parseCoin(dash).value,
+                            dash,
+                            // Coin.parseCoin(dash).value,
                             false,
                             /*new CustomData(
                                     rate.getRate(),
@@ -726,42 +841,42 @@ public class MainActivityPresenter implements IMainActivityPresenter {
 
     @Override
     public void testSingle() {
+        String coin = "eth";
         // john
         try {
-            Credentials credentials1 = createCredentials(null);
-            IBitcoreWalletServerAPI bitcoreWalletServerAPI1 = createBwsApi("http://52.82.67.41:3232/bws/api/", credentials1);
+            Credentials credentials1 = createCredentials(null, "eth");
+            IBitcoreWalletServerAPI bitcoreWalletServerAPI1 = createBwsApi("http://192.168.246.133:3232/bws/api/", credentials1);
             CreateWalletUseCase createWalletUseCase1 = new CreateWalletUseCase(
                     credentials1,
-                    new CopayersCryptUtils(
-                            new VircleCoinTypeRetriever()),
                     bitcoreWalletServerAPI1);
             JoinWalletInCreationUseCase joinWalletInCreationUseCase1 = new JoinWalletInCreationUseCase(
                     credentials1,
-                    new CopayersCryptUtils(
-                            new VircleCoinTypeRetriever()),
                     bitcoreWalletServerAPI1);
             CreateNewMainAddressesFromWalletUseCase createNewMainAddressesFromWalletUseCase1 = new CreateNewMainAddressesFromWalletUseCase(
                     bitcoreWalletServerAPI1);
-            String walletId = createWalletUseCase1.execute();
-            IJoinWalletResponse joinWalletResponse = joinWalletInCreationUseCase1.execute(walletId);
-            createNewMainAddressesFromWalletUseCase1.create();
+            String walletId = createWalletUseCase1.execute(coin);
+            IJoinWalletResponse joinWalletResponse = joinWalletInCreationUseCase1.execute(walletId, coin);
+            IAddressesResponse addressesResponse = createNewMainAddressesFromWalletUseCase1.create();
+            view.updateWalletId(walletId);
+            view.updateWalletAddress(addressesResponse.getAddress());
             System.out.println("bbb");
+            System.out.println(credentials1.getMnemonic());
+            view.updateMnemonic(credentials1.getMnemonic().toString());
         }catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    private Credentials createCredentials(String words) {
+    private Credentials createCredentials(String words, String coin) {
         Credentials credentials;
+
         if(words != null) {
             credentials = new Credentials(split("rotate scrap radio awesome eight fee degree fee young tone board another"),
                     "",
-                    new CopayersCryptUtils(
-                            new VircleCoinTypeRetriever()));
+                    coin);
 
         }else{
-            credentials = new Credentials("", new CopayersCryptUtils(
-                    new VircleCoinTypeRetriever()));
+            credentials = new Credentials(coin);
         }
         credentials.setNetworkParameters(MainNetParams.get());
         return credentials;
@@ -782,7 +897,6 @@ public class MainActivityPresenter implements IMainActivityPresenter {
                                         .addInterceptor(
                                                 new BWCRequestSignatureInterceptor(
                                                         credentials,
-                                                        new CopayersCryptUtils(new VircleCoinTypeRetriever()),
                                                         bws_url))
                                         .addInterceptor(
                                                 new HttpLoggingInterceptor()

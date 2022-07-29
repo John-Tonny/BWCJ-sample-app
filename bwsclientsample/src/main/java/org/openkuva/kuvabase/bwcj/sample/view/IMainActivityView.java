@@ -49,4 +49,6 @@ public interface IMainActivityView {
     void updateContract(String contract);
     void updateSecret(String secret);
     void updateSecretHash(String secretHash);
+
+    void updateMnemonic(String word);
 }

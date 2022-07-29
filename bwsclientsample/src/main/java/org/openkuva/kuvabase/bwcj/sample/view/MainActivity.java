@@ -50,6 +50,8 @@ import org.bitcoinj.core.Base58;
 import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.UnsafeByteArrayOutputStream;
 import org.bitcoinj.core.Utils;
+
+import java.math.BigDecimal;
 import java.util.Date;
 
 import org.bitcoinj.crypto.DeterministicKey;
@@ -92,19 +94,29 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.masternode.signMasternode.Sign
 import org.openkuva.kuvabase.bwcj.domain.useCases.masternode.broadcastMasternode.BroadcastMasternodeUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.masternode.ping.GetMasternodePingUseCase;
 
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAssetSendTxp.AddNewAssetSendTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAssetBurnTxp.AddNewAssetBurnTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAssetMintTxp.AddNewAssetMintTxpUseCase;
+
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewApproveTxp.AddNewApproveTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewFreezeBurnTxp.AddNewFreezeBurnTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewRelayTxp.AddNewRelayTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewRelayAssetTxp.AddNewRelayAssetTxpUseCase;
+
 import org.openkuva.kuvabase.bwcj.domain.utils.CommonNetworkParametersBuilder;
 import org.openkuva.kuvabase.bwcj.domain.utils.CopayersCryptUtils;
 import org.openkuva.kuvabase.bwcj.domain.utils.VircleCoinTypeRetriever;
+import org.openkuva.kuvabase.bwcj.domain.utils.EthCoinTypeRetriever;
 import org.openkuva.kuvabase.bwcj.domain.utils.transactions.TransactionBuilder;
 import org.openkuva.kuvabase.bwcj.sample.ApiUrls;
 import org.openkuva.kuvabase.bwcj.sample.R;
-import org.openkuva.kuvabase.bwcj.sample.model.credentials.CredentialsRepositoryProvider;
 import org.openkuva.kuvabase.bwcj.sample.model.rate.RateApiProvider;
 import org.openkuva.kuvabase.bwcj.sample.model.wallet.WalletRepositoryProvider;
 import org.openkuva.kuvabase.bwcj.sample.presenter.AsyncMainActivityPresenter;
 import org.openkuva.kuvabase.bwcj.sample.presenter.IMainActivityPresenter;
 import org.openkuva.kuvabase.bwcj.sample.presenter.MainActivityPresenter;
 import org.openkuva.kuvabase.bwcj.service.bitcoreWalletService.interfaces.IBitcoreWalletServerAPI;
+import org.openkuva.kuvabase.bwcj.service.bitcoreWalletService.interfaces.exception.InvalidParamsException;
 import org.openkuva.kuvabase.bwcj.service.bitcoreWalletService.interfaces.wallets.IJoinWalletResponse;
 import org.openkuva.kuvabase.bwcj.service.bitcoreWalletService.retrofit2.IRetrofit2BwsAPI;
 import org.openkuva.kuvabase.bwcj.service.bitcoreWalletService.retrofit2.Retrofit2BwsApiBridge;
@@ -114,6 +126,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.math.BigInteger;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -148,16 +161,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private IMainActivityPresenter mainActivityPresenter;
     private IBitcoreWalletServerAPI bitcoreWalletServerAPI;
     private Credentials credentials;
+    private CopayersCryptUtils copayersCryptUtils;
 
     private Button swapInitiate;
     private Button swapParticipate;
     private Button swapRedeem;
     private Button swapRefund;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(true) {
+            copayersCryptUtils = new CopayersCryptUtils(new VircleCoinTypeRetriever());
+        }else{
+            copayersCryptUtils = new CopayersCryptUtils(new EthCoinTypeRetriever());
+        }
 
         setupCredentials();
         setupBwsApi();
@@ -166,14 +187,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setupCredentials() {
-        /*credentials = new Credentials("", new CopayersCryptUtils(
-                new VircleCoinTypeRetriever()));*/
+        /*credentials = new Credentials("",   copayersCryptUtils);*/
 
-         String words = "bone casual observe virus prepare system aunt bamboo horror police vault floor";
-         words = "rotate scrap radio awesome eight fee degree fee young tone board another";
-         credentials = new Credentials(split(words),"", new CopayersCryptUtils(
-                new VircleCoinTypeRetriever()));
+        String words = "bone casual observe virus prepare system aunt bamboo horror police vault floor";
+        // words = "rotate scrap radio awesome eight fee degree fee young tone board another";
+        // words = "omit embark obscure food fault notable smoke crowd bicycle surge bone opera";
+        // words = "oval you token plug copper visa employ link sell asset kick sausage";
+        words  = "shiver reject forum acid recycle toast jar walk cabbage peace team pact";
 
+        credentials = new Credentials(split(words),"",copayersCryptUtils);
 
         credentials.setNetworkParameters(MainNetParams.get());
 
@@ -207,43 +229,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 credentials,
                                 new CreateWalletUseCase(
                                         credentials,
-                                        new CopayersCryptUtils(
-                                                new VircleCoinTypeRetriever()),
                                         bitcoreWalletServerAPI),
                                 new JoinWalletInCreationUseCase(
                                         credentials,
-                                        new CopayersCryptUtils(
-                                                new VircleCoinTypeRetriever()),
                                         bitcoreWalletServerAPI),
                                 new GetWalletAddressesUseCase(
                                         bitcoreWalletServerAPI),
                                 new GetWalletBalanceUseCase(
                                         credentials,
-                                        new CopayersCryptUtils(
-                                                new VircleCoinTypeRetriever()),
                                         bitcoreWalletServerAPI,
                                         WalletRepositoryProvider.get()),
                                 new GetRateUseCases(
                                         RateApiProvider.get()),
                                 new AddNewTxpUseCase(
                                         credentials,
-                                        new CopayersCryptUtils(
-                                                new VircleCoinTypeRetriever()),
                                         bitcoreWalletServerAPI),
                                 new PublishTxpUseCase(
                                         bitcoreWalletServerAPI,
-                                        credentials,
-                                        new CopayersCryptUtils(
-                                                new VircleCoinTypeRetriever()),
-                                        new TransactionBuilder(
-                                                new CommonNetworkParametersBuilder())),
+                                        credentials),
                                 new SignTxpUseCase(
                                         bitcoreWalletServerAPI,
-                                        credentials,
-                                        new CopayersCryptUtils(
-                                                new VircleCoinTypeRetriever()),
-                                        new TransactionBuilder(
-                                                new CommonNetworkParametersBuilder())),
+                                        credentials),
                                 new BroadcastTxpUseCase(
                                         credentials,
                                         bitcoreWalletServerAPI),
@@ -252,14 +258,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         bitcoreWalletServerAPI),
                                 new RecoveryWalletFromMnemonicUseCase(
                                         credentials,
-                                        new CopayersCryptUtils(
-                                                new VircleCoinTypeRetriever()),
                                         bitcoreWalletServerAPI),
                                 bitcoreWalletServerAPI,
                                 new InitializeCredentialsWithRandomValueUseCase(
-                                        credentials,
-                                        new CopayersCryptUtils(
-                                                new VircleCoinTypeRetriever())),
+                                        credentials),
                                 new CreateNewMainAddressesFromWalletUseCase(
                                         bitcoreWalletServerAPI),
                                 new GetTxHistoryUseCase(
@@ -274,13 +276,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 new GetMasternodePingUseCase(bitcoreWalletServerAPI),
                                 new AddNewAtomicswapInitiateTxpUseCase(
                                         credentials,
-                                        new CopayersCryptUtils(
-                                                new VircleCoinTypeRetriever()),
                                         bitcoreWalletServerAPI),
                                 new AddNewAtomicswapParticipateTxpUseCase(
                                         credentials,
-                                        new CopayersCryptUtils(
-                                                new VircleCoinTypeRetriever()),
                                         bitcoreWalletServerAPI),
                                 new AddNewAtomicswapRedeemTxpUseCase(
                                         credentials,
@@ -293,8 +291,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         bitcoreWalletServerAPI),
                                 new GetWalletUseCase(
                                         credentials,
-                                        new CopayersCryptUtils(
-                                                new VircleCoinTypeRetriever()),
                                         bitcoreWalletServerAPI),
                                 new AddNewProRegTxpUseCase(
                                         credentials,
@@ -315,6 +311,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         credentials,
                                         new CopayersCryptUtils(
                                                 new VircleCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewAssetSendTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new VircleCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewAssetBurnTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new VircleCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewAssetMintTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new VircleCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewApproveTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new EthCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewFreezeBurnTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new EthCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewRelayTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new EthCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewRelayAssetTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new EthCoinTypeRetriever()),
                                         bitcoreWalletServerAPI)
                                 ),
                         Executors.newCachedThreadPool());
@@ -337,12 +368,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                                 .addInterceptor(
                                                         new BWCRequestSignatureInterceptor(
                                                                 this.credentials,
-                                                                // CredentialsRepositoryProvider.get(this),
-                                                                new CopayersCryptUtils(new VircleCoinTypeRetriever()),
                                                                 ApiUrls.URL_BWS))
                                                 .addInterceptor(
                                                         new HttpLoggingInterceptor()
                                                                 .setLevel(HttpLoggingInterceptor.Level.BODY))
+                                                .readTimeout(60, TimeUnit.SECONDS)
+                                                .writeTimeout(60, TimeUnit.SECONDS)
+                                                .connectTimeout(60, TimeUnit.SECONDS)
                                                 .build())
                                 .build()
                                 .create(IRetrofit2BwsAPI.class));

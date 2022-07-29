@@ -55,6 +55,12 @@ public class InMainThreadMainActivityView implements IMainActivityView {
         handler.post(() -> origin.updateWalletAddress(address));
     }
 
+
+    @Override
+    public void updateMnemonic(final String words) {
+        handler.post(() -> origin.updateMnemonic(words));
+    }
+
     @Override
     public void updateWalletBalance(String balance) {
         handler.post(() -> origin.updateWalletBalance(balance));
