@@ -56,8 +56,10 @@ import org.openkuva.kuvabase.bwcj.data.entity.interfaces.masternode.IMasternodeC
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.masternode.IMasternodePing;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.masternode.IMasternodeRemove;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.masternode.IMasternodeStatus;
+import org.openkuva.kuvabase.bwcj.data.entity.interfaces.asset.IAssetInfo;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.IAtomicswapInitiateData;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.IInput;
+import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.ITransactionHistory2;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.ITransactionProposal;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.wallet.IWallet;
 import org.openkuva.kuvabase.bwcj.data.entity.pojo.transaction.AtomicswapInitiateData;
@@ -138,6 +140,9 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewFree
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewRelayTxp.IAddNewRelayTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewRelayAssetTxp.IAddNewRelayAssetTxpUseCase;
 
+import org.openkuva.kuvabase.bwcj.domain.useCases.asset.IGetAssetInfoUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.getTxHistory.IGetTxHistory2UseCase;
+
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -198,6 +203,8 @@ public class MainActivityPresenter implements IMainActivityPresenter {
     private final IAddNewFreezeBurnTxpUseCase addNewFreezeBurnTxpUseCase;
     private final IAddNewRelayTxpUseCase addNewRelayTxpUseCase;
     private final IAddNewRelayAssetTxpUseCase addNewRelayAssetTxpUseCase;
+    private final IGetAssetInfoUseCase getAssetInfoUseCase;
+    private final IGetTxHistory2UseCase getTxHistory2UseCase;
 
 
     public MainActivityPresenter(
@@ -241,7 +248,9 @@ public class MainActivityPresenter implements IMainActivityPresenter {
             IAddNewApproveTxpUseCase addNewApproveTxpUseCase,
             IAddNewFreezeBurnTxpUseCase addNewFreezeBurnTxpUseCase,
             IAddNewRelayTxpUseCase addNewRelayTxpUseCase,
-            IAddNewRelayAssetTxpUseCase addNewRelayAssetTxpUseCase
+            IAddNewRelayAssetTxpUseCase addNewRelayAssetTxpUseCase,
+            IGetAssetInfoUseCase getAssetInfoUseCase,
+            IGetTxHistory2UseCase getTxHistory2UseCase
             ) {
 
         this.view = view;
@@ -288,6 +297,9 @@ public class MainActivityPresenter implements IMainActivityPresenter {
         this.addNewFreezeBurnTxpUseCase = addNewFreezeBurnTxpUseCase;
         this.addNewRelayTxpUseCase = addNewRelayTxpUseCase;
         this.addNewRelayAssetTxpUseCase = addNewRelayAssetTxpUseCase;
+
+        this.getAssetInfoUseCase = getAssetInfoUseCase;
+        this.getTxHistory2UseCase = getTxHistory2UseCase;
     }
 
     @Override
@@ -478,22 +490,41 @@ public class MainActivityPresenter implements IMainActivityPresenter {
 
     @Override
     public void getTxHistory(Integer skip, Integer limit, String tokenAddress, Integer includeExtendedInfo) {
-         try{
-            ITransactionHistory[] txs = getTxHistoryUseCase.execute(skip, limit, tokenAddress, includeExtendedInfo);
-            System.out.println(txs);
-         } catch (Exception e) {
-             view.showMessage(e.getMessage());
-         }
+        if(false) {
+            try {
+                ITransactionHistory[] txs = getTxHistoryUseCase.execute(skip, limit, tokenAddress, includeExtendedInfo);
+                System.out.println(txs);
+            } catch (Exception e) {
+                view.showMessage(e.getMessage());
+            }
+        }else{
+            try {
+                ITransactionHistory2 txs = getTxHistory2UseCase.execute(skip, limit);
+                System.out.println(txs);
+            } catch (Exception e) {
+                view.showMessage(e.getMessage());
+            }
+        }
     }
 
     @Override
     public void getMasternodeStatus(String coin, String txid, String address, String payee) {
-        try {
-            IMasternodeStatus txs = getMasternodeStatusUseCase.execute(coin, txid, address, payee );
-            System.out.println(txs);
-        } catch (Exception e) {
-            view.showMessage(e.getMessage());
+        if(false) {
+            try {
+                IMasternodeStatus txs = getMasternodeStatusUseCase.execute(coin, txid, address, payee);
+                System.out.println(txs);
+            } catch (Exception e) {
+                view.showMessage(e.getMessage());
+            }
+        }else {
+            try {
+                IAssetInfo assetInfo = getAssetInfoUseCase.execute(txid);
+                System.out.println(assetInfo);
+            } catch (Exception e) {
+                view.showMessage(e.getMessage());
+            }
         }
+
     }
 
     @Override

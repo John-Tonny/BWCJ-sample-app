@@ -103,6 +103,9 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewFree
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewRelayTxp.AddNewRelayTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewRelayAssetTxp.AddNewRelayAssetTxpUseCase;
 
+import org.openkuva.kuvabase.bwcj.domain.useCases.asset.GetAssetInfoUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.getTxHistory.GetTxHistory2UseCase;
+
 import org.openkuva.kuvabase.bwcj.domain.utils.CommonNetworkParametersBuilder;
 import org.openkuva.kuvabase.bwcj.domain.utils.CopayersCryptUtils;
 import org.openkuva.kuvabase.bwcj.domain.utils.VircleCoinTypeRetriever;
@@ -191,9 +194,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String words = "bone casual observe virus prepare system aunt bamboo horror police vault floor";
         // words = "rotate scrap radio awesome eight fee degree fee young tone board another";
-        // words = "omit embark obscure food fault notable smoke crowd bicycle surge bone opera";
+        words = "omit embark obscure food fault notable smoke crowd bicycle surge bone opera";
         // words = "oval you token plug copper visa employ link sell asset kick sausage";
-        words  = "shiver reject forum acid recycle toast jar walk cabbage peace team pact";
+        // words  = "shiver reject forum acid recycle toast jar walk cabbage peace team pact";
 
         credentials = new Credentials(split(words),"",copayersCryptUtils);
 
@@ -346,6 +349,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         credentials,
                                         new CopayersCryptUtils(
                                                 new EthCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new GetAssetInfoUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new EthCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new GetTxHistory2UseCase(
+                                        credentials,
                                         bitcoreWalletServerAPI)
                                 ),
                         Executors.newCachedThreadPool());
@@ -413,6 +424,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        swapRedeem.setOnClickListener(this);
        swapRefund  = findViewById(R.id.ma_swap_refund_btn);
        swapRefund.setOnClickListener(this);
+
+
 
     }
 
