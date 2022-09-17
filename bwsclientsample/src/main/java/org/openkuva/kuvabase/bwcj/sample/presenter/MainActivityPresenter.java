@@ -80,6 +80,7 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAtom
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAtomicswapParticipateTxp.IAddNewAtomicswapParticipateTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAtomicswapRedeemTxp.IAddNewAtomicswapRedeemTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAtomicswapRefundTxp.IAddNewAtomicswapRefundTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewErc1155Txp.IAddNewErc1155TxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewTxp.IAddNewTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAssetSendTxp.IAddNewAssetSendTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAssetBurnTxp.IAddNewAssetBurnTxpUseCase;
@@ -139,6 +140,12 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewAppr
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewFreezeBurnTxp.IAddNewFreezeBurnTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewRelayTxp.IAddNewRelayTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewRelayAssetTxp.IAddNewRelayAssetTxpUseCase;
+
+
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewErc721Txp.IAddNewErc721TxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewErc721MintTxp.IAddNewErc721MintTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewErc721MintNFTTxp.IAddNewErc721MintNFTTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewErc1155Txp.IAddNewErc1155TxpUseCase;
 
 import org.openkuva.kuvabase.bwcj.domain.useCases.asset.IGetAssetInfoUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.getTxHistory.IGetTxHistory2UseCase;
@@ -207,6 +214,12 @@ public class MainActivityPresenter implements IMainActivityPresenter {
     private final IGetTxHistory2UseCase getTxHistory2UseCase;
 
 
+    private final IAddNewErc721TxpUseCase addNewErc721TxpUseCase;
+    private final IAddNewErc721MintTxpUseCase addNewErc721MintTxpUseCase;
+    private final IAddNewErc721MintNFTTxpUseCase addNewErc721MintNFTTxpUseCase;
+    private final IAddNewErc1155TxpUseCase addNewErc1155TxpUseCase;
+    private final IAddNewErc1155TxpUseCase addNewErc1155MintTxpUseCase;
+
     public MainActivityPresenter(
             IMainActivityView view,
             ICredentials credentials,
@@ -250,7 +263,12 @@ public class MainActivityPresenter implements IMainActivityPresenter {
             IAddNewRelayTxpUseCase addNewRelayTxpUseCase,
             IAddNewRelayAssetTxpUseCase addNewRelayAssetTxpUseCase,
             IGetAssetInfoUseCase getAssetInfoUseCase,
-            IGetTxHistory2UseCase getTxHistory2UseCase
+            IGetTxHistory2UseCase getTxHistory2UseCase,
+            IAddNewErc721TxpUseCase addNewErc721TxpUseCase,
+            IAddNewErc721MintTxpUseCase addNewErc721MintTxpUseCase,
+            IAddNewErc721MintNFTTxpUseCase addNewErc721MintNFTTxpUseCase,
+            IAddNewErc1155TxpUseCase addNewErc1155TxpUseCase,
+            IAddNewErc1155TxpUseCase addNewErc1155MintTxpUseCase
             ) {
 
         this.view = view;
@@ -300,6 +318,12 @@ public class MainActivityPresenter implements IMainActivityPresenter {
 
         this.getAssetInfoUseCase = getAssetInfoUseCase;
         this.getTxHistory2UseCase = getTxHistory2UseCase;
+
+        this.addNewErc721TxpUseCase = addNewErc721TxpUseCase;
+        this.addNewErc721MintTxpUseCase = addNewErc721MintTxpUseCase;
+        this.addNewErc721MintNFTTxpUseCase = addNewErc721MintNFTTxpUseCase;
+        this.addNewErc1155TxpUseCase = addNewErc1155TxpUseCase;
+        this.addNewErc1155MintTxpUseCase = addNewErc1155MintTxpUseCase;
     }
 
     @Override
@@ -345,10 +369,19 @@ public class MainActivityPresenter implements IMainActivityPresenter {
     @Override
     public void sendDashToAddress(String address, String dash, String msg) {
         //String tokenAddress = "0x8ffb6ceeb3c41f6286eedbc97df6d711ae00bff6";
-        long assetGuid = 3235835254L;
-        assetGuid = 3486931473L;
+        // long assetGuid = 3235835254L;
+        // assetGuid = 3486931473L;
+        boolean isErc721 = false;
+        String tokenAddress;
+        if(isErc721){
+            tokenAddress = "0x26B69343Ab58f9A1A1BcB7FeE7FA6a5A1bB3409E"; //erc721
+        }else{
+            tokenAddress = "0x50d80b2a3eaf85b6413c4c1ad38134a6d1bb1ba6"; //erc1155
+        }
+
         try {
             // IRateResponse rate = getRateUseCases.execute();
+            /*
             ITransactionProposal proposal =
                     postTransaction.execute(
                             // tokenAddress,
@@ -359,6 +392,7 @@ public class MainActivityPresenter implements IMainActivityPresenter {
                             msg,
                             true);
             // 55a0a3ba156264b671fb7ac321c4d8b33a63341217e758e5912006a38bc720a3
+            */
 
             /*
             ITransactionProposal proposal =
@@ -440,6 +474,74 @@ public class MainActivityPresenter implements IMainActivityPresenter {
                             dash
                             );
             // 1e226838b3c68175d0e2a9eccd1c09f374971ae24a763f12bc585acea0671732
+            */
+
+            // erc721 send
+            /*
+            String tokenId = "4";
+            // address = "0x58CfA3CD076f8c79E411fDB87E473Dd8216713F0";  // square
+            address = "0xbCDEc190eE9CfbAB5973E1aB17971CE1774F581F"; // rotate
+            ITransactionProposal proposal =
+                    addNewErc721TxpUseCase.execute(
+                            tokenAddress,
+                            address,
+                            tokenId);
+            //0x41f49473f04d6a1923a24a61f160409e388e0e3c7bb74a63fc918bbdb0953d50
+            */
+
+            // erc721 mint
+            /*
+            String tokenId = "30001";
+            address = "0x58CfA3CD076f8c79E411fDB87E473Dd8216713F0";
+            String tokenUri = "http://vpubchain.info/30001.json";
+            ITransactionProposal proposal =
+                    addNewErc721MintTxpUseCase.execute(
+                            tokenAddress,
+                            address,
+                            tokenId,
+                            tokenUri);
+            // 0x7eb939c997f196bf1e18a2bc166ce78964e6d9a1b83991052ad80dab933e7026
+            */
+
+            // erc721 mintNFT
+            /*
+            address = "0x58CfA3CD076f8c79E411fDB87E473Dd8216713F0";
+            String tokenUri = "http://vpubchain.info/20.json";
+            ITransactionProposal proposal =
+                    addNewErc721MintNFTTxpUseCase.execute(
+                            tokenAddress,
+                            address,
+                            tokenUri);
+            // 0xba4b77331992388ad8e3776647166c63f9ba6131e799a2233e093303c279fa0d
+            */
+
+            // erc1155 send
+
+            String tokenId = "10000";
+            address = "0x58CfA3CD076f8c79E411fDB87E473Dd8216713F0";
+            ITransactionProposal proposal =
+                    addNewErc1155TxpUseCase.execute(
+                            tokenAddress,
+                            address,
+                            tokenId,
+                            "10",
+                            "my测试1",
+                            null);
+            // 0x584f8126db840ff0ebc37ebe5f59bf81df259bc29991505b7163a3c3c1360e8d
+            // 0xf30a4b5af6be5fa66e15bf4453513545cf1f7baad236271f533b0d337457781a
+
+
+            // erc1155 mint
+            /*
+            String tokenId = "17000";
+            address = "0x58CfA3CD076f8c79E411fDB87E473Dd8216713F0";
+            ITransactionProposal proposal =
+                    addNewErc1155MintTxpUseCase.execute(
+                            tokenAddress,
+                            address,
+                            tokenId,
+                            "1700");
+            // 0xd7d68804f93ce32b5cb41b71fe117f2297820b32e71206cea7994676747279b7
             */
 
             ITransactionProposal publishedTxp = publishTxpUseCase.execute(proposal);

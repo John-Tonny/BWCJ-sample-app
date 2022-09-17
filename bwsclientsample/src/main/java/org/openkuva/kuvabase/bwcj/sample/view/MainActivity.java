@@ -103,6 +103,14 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewFree
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewRelayTxp.AddNewRelayTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewRelayAssetTxp.AddNewRelayAssetTxpUseCase;
 
+
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewErc721Txp.AddNewErc721TxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewErc721MintTxp.AddNewErc721MintTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewErc721MintNFTTxp.AddNewErc721MintNFTTxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewErc1155Txp.AddNewErc1155TxpUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewErc1155MintTxp.AddNewErc1155MintTxpUseCase;
+
+
 import org.openkuva.kuvabase.bwcj.domain.useCases.asset.GetAssetInfoUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.getTxHistory.GetTxHistory2UseCase;
 
@@ -177,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(true) {
+        if(false) {
             copayersCryptUtils = new CopayersCryptUtils(new VircleCoinTypeRetriever());
         }else{
             copayersCryptUtils = new CopayersCryptUtils(new EthCoinTypeRetriever());
@@ -193,8 +201,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         /*credentials = new Credentials("",   copayersCryptUtils);*/
 
         String words = "bone casual observe virus prepare system aunt bamboo horror police vault floor";
-        // words = "rotate scrap radio awesome eight fee degree fee young tone board another";
-        words = "omit embark obscure food fault notable smoke crowd bicycle surge bone opera";
+        words = "rotate scrap radio awesome eight fee degree fee young tone board another";
+        // words = "square spray mother unusual foam casino fall include pulp arm soul scorpion";
+        // words = "omit embark obscure food fault notable smoke crowd bicycle surge bone opera";
         // words = "oval you token plug copper visa employ link sell asset kick sausage";
         // words  = "shiver reject forum acid recycle toast jar walk cabbage peace team pact";
 
@@ -357,6 +366,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         bitcoreWalletServerAPI),
                                 new GetTxHistory2UseCase(
                                         credentials,
+                                        bitcoreWalletServerAPI),
+                                new AddNewErc721TxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new EthCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewErc721MintTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new EthCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewErc721MintNFTTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new EthCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewErc1155TxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new EthCoinTypeRetriever()),
+                                        bitcoreWalletServerAPI),
+                                new AddNewErc1155MintTxpUseCase(
+                                        credentials,
+                                        new CopayersCryptUtils(
+                                                new EthCoinTypeRetriever()),
                                         bitcoreWalletServerAPI)
                                 ),
                         Executors.newCachedThreadPool());

@@ -36,6 +36,7 @@ package org.openkuva.kuvabase.bwcj.sample;
 public class ApiUrls {
     // public static String URL_BWS = "http://52.82.14.63:3232/bws/api/";
     public static String URL_BWS = "http://192.168.246.133:3232/bws/api/";
+    // public static String URL_BWS = "http://106.55.177.193:3232/bws/api/";
 }
 
 
