@@ -24,11 +24,17 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/BWCJ-sample-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/BWCJ-sample-app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/ApiUrls.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/ApiUrls.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/view/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/view/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/bitcoinj-core-0.16.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/bitcoinj-core-0.16.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/bwcj-0.1.15.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/bwcj-0.1.15.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +42,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[192.168.192.101:5555]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[192.168.54.101:5555]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -75,6 +81,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1sWIGtKf3OCvjDJGPv9Kf4g0ODD" />
   <component name="ProjectViewState">
@@ -282,22 +296,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>995</line>
+          <line>1099</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>996</line>
+          <line>1100</line>
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>997</line>
+          <line>1101</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>998</line>
+          <line>1102</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -317,22 +331,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>579</line>
+          <line>674</line>
           <option name="timeStamp" value="173" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>580</line>
+          <line>675</line>
           <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>581</line>
+          <line>676</line>
           <option name="timeStamp" value="175" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>578</line>
+          <line>673</line>
           <option name="timeStamp" value="181" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -357,7 +371,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>583</line>
+          <line>678</line>
           <option name="timeStamp" value="240" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -367,12 +381,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>716</line>
+          <line>820</line>
           <option name="timeStamp" value="271" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>734</line>
+          <line>838</line>
           <option name="timeStamp" value="275" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -437,7 +451,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>794</line>
+          <line>898</line>
           <option name="timeStamp" value="322" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -487,23 +501,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>699</line>
+          <line>803</line>
           <option name="timeStamp" value="407" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.15.jar!/org/openkuva/kuvabase/bwcj/domain/utils/transactions/TransactionBuilder.class</url>
-          <line>42</line>
-          <option name="timeStamp" value="423" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>jar://$PROJECT_DIR$/libs/bitcoinj-core-0.16.1.jar!/org/bitcoinj/core/Transaction.class</url>
-          <line>981</line>
-          <option name="timeStamp" value="449" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>jar://$PROJECT_DIR$/libs/bitcoinj-core-0.16.1.jar!/org/bitcoinj/core/Transaction.class</url>
-          <line>980</line>
-          <option name="timeStamp" value="455" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.15.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/transactionProposal/addNewProRegTxp/AddNewProRegTxpUseCase.class</url>
@@ -512,27 +511,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>1003</line>
+          <line>1107</line>
           <option name="timeStamp" value="461" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>1005</line>
+          <line>1109</line>
           <option name="timeStamp" value="462" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>916</line>
+          <line>1020</line>
           <option name="timeStamp" value="464" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>917</line>
+          <line>1021</line>
           <option name="timeStamp" value="465" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>919</line>
+          <line>1023</line>
           <option name="timeStamp" value="469" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -542,68 +541,113 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>693</line>
+          <line>797</line>
           <option name="timeStamp" value="535" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>714</line>
+          <line>818</line>
           <option name="timeStamp" value="537" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>965</line>
+          <line>1069</line>
           <option name="timeStamp" value="539" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>958</line>
+          <line>1062</line>
           <option name="timeStamp" value="542" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>960</line>
+          <line>1064</line>
           <option name="timeStamp" value="544" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>556</line>
+          <line>651</line>
           <option name="timeStamp" value="545" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>763</line>
+          <line>867</line>
           <option name="timeStamp" value="547" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>765</line>
+          <line>869</line>
           <option name="timeStamp" value="548" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>744</line>
+          <line>848</line>
           <option name="timeStamp" value="550" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>604</line>
-          <option name="timeStamp" value="551" />
+          <url>jar://$PROJECT_DIR$/libs/bitcoinj-core-0.16.1.jar!/org/bitcoinj/core/Address.class</url>
+          <line>23</line>
+          <option name="timeStamp" value="593" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.15.jar!/org/openkuva/kuvabase/bwcj/service/bitcoreWalletService/retrofit2/Retrofit2BwsApiBridge.class</url>
-          <line>95</line>
-          <option name="timeStamp" value="554" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>547</line>
-          <option name="timeStamp" value="573" />
+          <url>jar://$PROJECT_DIR$/libs/bitcoinj-core-0.16.1.jar!/org/bitcoinj/core/SegwitAddress.class</url>
+          <line>117</line>
+          <option name="timeStamp" value="595" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
-          <line>546</line>
-          <option name="timeStamp" value="574" />
+          <line>438</line>
+          <option name="timeStamp" value="669" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>689</line>
+          <option name="timeStamp" value="673" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>450</line>
+          <option name="timeStamp" value="676" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>468</line>
+          <option name="timeStamp" value="677" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>408</line>
+          <option name="timeStamp" value="682" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>485</line>
+          <option name="timeStamp" value="685" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>482</line>
+          <option name="timeStamp" value="686" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>446</line>
+          <option name="timeStamp" value="687" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>479</line>
+          <option name="timeStamp" value="692" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/bwsclientsample/src/main/java/org/openkuva/kuvabase/bwcj/sample/presenter/MainActivityPresenter.java</url>
+          <line>363</line>
+          <option name="timeStamp" value="694" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/libs/bwcj-0.1.15.jar!/org/openkuva/kuvabase/bwcj/domain/useCases/wallet/getWalletAddress/GetWalletAddressesUseCase.class</url>
+          <line>30</line>
+          <option name="timeStamp" value="701" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -612,5 +656,10 @@
         <PinnedItemInfo />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="bwsclientsample">
+        <watch expression="getWalletAddressesUseCase." language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

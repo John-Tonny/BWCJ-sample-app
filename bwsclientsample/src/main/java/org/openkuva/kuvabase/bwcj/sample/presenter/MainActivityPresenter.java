@@ -59,6 +59,7 @@ import org.openkuva.kuvabase.bwcj.data.entity.interfaces.masternode.IMasternodeS
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.asset.IAssetInfo;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.IAtomicswapInitiateData;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.IInput;
+import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.IOutput;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.ITransactionHistory2;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.transaction.ITransactionProposal;
 import org.openkuva.kuvabase.bwcj.data.entity.interfaces.wallet.IWallet;
@@ -67,6 +68,7 @@ import org.openkuva.kuvabase.bwcj.data.entity.pojo.transaction.AtomicswapPartici
 import org.openkuva.kuvabase.bwcj.data.entity.pojo.transaction.AtomicswapRedeemData;
 import org.openkuva.kuvabase.bwcj.data.entity.pojo.transaction.AtomicswapRefundData;
 import org.openkuva.kuvabase.bwcj.data.entity.pojo.transaction.CustomData;
+import org.openkuva.kuvabase.bwcj.data.entity.pojo.transaction.Output;
 import org.openkuva.kuvabase.bwcj.domain.useCases.credentials.IInitializeCredentialsUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.exchange.getRate.IGetRateUseCases;
 import org.openkuva.kuvabase.bwcj.domain.useCases.masternode.broadcastMasternode.IBroadcastMasternodeUseCase;
@@ -150,8 +152,13 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.addNewErc1
 import org.openkuva.kuvabase.bwcj.domain.useCases.asset.IGetAssetInfoUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.getTxHistory.IGetTxHistory2UseCase;
 
+import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.getAllPendingTxProposals.IGetAllPendingTxpsUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.wallet.getUtxos.IGetUtxosUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.wallet.mergeBalance.IMergeBalanceUseCase;
+
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -220,6 +227,10 @@ public class MainActivityPresenter implements IMainActivityPresenter {
     private final IAddNewErc1155TxpUseCase addNewErc1155TxpUseCase;
     private final IAddNewErc1155TxpUseCase addNewErc1155MintTxpUseCase;
 
+    private final IGetAllPendingTxpsUseCase getAllPendingTxpsUseCase;
+    private final IGetUtxosUseCase getUtxosUseCase;
+    private final IMergeBalanceUseCase mergeBalanceUseCase;
+
     public MainActivityPresenter(
             IMainActivityView view,
             ICredentials credentials,
@@ -268,7 +279,10 @@ public class MainActivityPresenter implements IMainActivityPresenter {
             IAddNewErc721MintTxpUseCase addNewErc721MintTxpUseCase,
             IAddNewErc721MintNFTTxpUseCase addNewErc721MintNFTTxpUseCase,
             IAddNewErc1155TxpUseCase addNewErc1155TxpUseCase,
-            IAddNewErc1155TxpUseCase addNewErc1155MintTxpUseCase
+            IAddNewErc1155TxpUseCase addNewErc1155MintTxpUseCase,
+            IGetAllPendingTxpsUseCase getAllPendingTxpsUseCase,
+            IGetUtxosUseCase getUtxosUseCase,
+            IMergeBalanceUseCase mergeBalanceUseCase
             ) {
 
         this.view = view;
@@ -324,6 +338,10 @@ public class MainActivityPresenter implements IMainActivityPresenter {
         this.addNewErc721MintNFTTxpUseCase = addNewErc721MintNFTTxpUseCase;
         this.addNewErc1155TxpUseCase = addNewErc1155TxpUseCase;
         this.addNewErc1155MintTxpUseCase = addNewErc1155MintTxpUseCase;
+
+        this.getAllPendingTxpsUseCase = getAllPendingTxpsUseCase;
+        this.getUtxosUseCase = getUtxosUseCase;
+        this.mergeBalanceUseCase = mergeBalanceUseCase;
     }
 
     @Override
@@ -371,6 +389,9 @@ public class MainActivityPresenter implements IMainActivityPresenter {
         //String tokenAddress = "0x8ffb6ceeb3c41f6286eedbc97df6d711ae00bff6";
         // long assetGuid = 3235835254L;
         // assetGuid = 3486931473L;
+        long MIN_SATOSHIS = 50000000000L;
+        long MAX_SATOSHIS = 1000000000000L;
+        long MATURE_BLOCK = 100;
         boolean isErc721 = false;
         String tokenAddress;
         if(isErc721){
@@ -381,18 +402,92 @@ public class MainActivityPresenter implements IMainActivityPresenter {
 
         try {
             // IRateResponse rate = getRateUseCases.execute();
-            /*
-            ITransactionProposal proposal =
-                    postTransaction.execute(
-                            // tokenAddress,
-                            address,
-                            dash,
-                            msg,
-                            false,
-                            msg,
-                            true);
+
+            ITransactionProposal proposal = null;
+            boolean isOrigin = true;
+            boolean isOutputs = false;
+            boolean isInputs = false;
+            boolean isMultiSign = false;
+            if(isOrigin) {
+                proposal =
+                        postTransaction.execute(
+                                // tokenAddress,
+                                address,
+                                dash,
+                                msg,
+                                false,
+                                msg,
+                                true);
+            }else if(isOutputs){
+                IOutput[] outputs = new IOutput[3];
+                outputs[0]  = new Output(
+                        "Sa9T57cng8Sg9fFXLgfASxpygXUemYStKF",
+                        "111000000",
+                        null);
+                outputs[1]  = new Output(
+                        "Sa9T57cng8Sg9fFXLgfASxpygXUemYStKF",
+                        "222000000",
+                        null);
+                outputs[2]  = new Output(
+                        "33jNHYbBY5wrC6enid4wHrUD9w1Tu2kt9G",
+                        "333000000",
+                        null);
+
+                proposal = postTransaction.execute(outputs,  msg, false, "send", "", true);
+            }else if(isMultiSign){
+                ITransactionProposal[] proposals = getAllPendingTxpsUseCase.execute();
+                if (proposals.length>=1){
+                    proposal = proposals[0];
+                }else{
+                    view.showMessage("Not found!");
+                    return;
+                }
+            }else if(isInputs){
+                try {
+                    IInput[] inputs = getUtxosUseCase.execute();
+                    IOutput[] outputs = new IOutput[1];
+
+                    ArrayList<IInput> aInputs = new ArrayList<IInput>();
+                    long totalSatoshis = 0;
+                    for(IInput input: inputs){
+                        if(!input.isSpent() && !input.isLocked()){
+                            if (input.getSatoshis() < MIN_SATOSHIS){
+                                if(totalSatoshis >= MAX_SATOSHIS){
+                                    break;
+                                }
+                                if (!input.isCoinbase() && input.getConfirmations() >= 1){
+                                    totalSatoshis += input.getSatoshis();
+                                    aInputs.add(input);
+                                }else if(input.isCoinbase() && input.getConfirmations() >= MATURE_BLOCK){
+                                    totalSatoshis += input.getSatoshis();
+                                    aInputs.add(input);
+                                }
+                            }
+                        }
+                    }
+                    totalSatoshis = MAX_SATOSHIS +1;
+                    if(totalSatoshis < MAX_SATOSHIS){
+                        view.showMessage("fund too small!");
+                        return;
+                    }
+
+                    outputs[0]  = new Output(
+                            "33jNHYbBY5wrC6enid4wHrUD9w1Tu2kt9G",
+                            String.valueOf(totalSatoshis-100000000),
+                            null);
+                    IInput[] bInputs = aInputs.toArray(new IInput[0]);
+
+                    proposal = postTransaction.execute(bInputs, outputs,  msg, false, "send", "");
+                    System.out.println(inputs);
+                } catch (Exception e) {
+                    view.showMessage(e.getMessage());
+                }
+            }else{
+                view.showMessage("Not Method!");
+                return;
+            }
             // 55a0a3ba156264b671fb7ac321c4d8b33a63341217e758e5912006a38bc720a3
-            */
+
 
             /*
             ITransactionProposal proposal =
@@ -516,7 +611,7 @@ public class MainActivityPresenter implements IMainActivityPresenter {
             */
 
             // erc1155 send
-
+            /*
             String tokenId = "10000";
             address = "0x58CfA3CD076f8c79E411fDB87E473Dd8216713F0";
             ITransactionProposal proposal =
@@ -529,7 +624,7 @@ public class MainActivityPresenter implements IMainActivityPresenter {
                             null);
             // 0x584f8126db840ff0ebc37ebe5f59bf81df259bc29991505b7163a3c3c1360e8d
             // 0xf30a4b5af6be5fa66e15bf4453513545cf1f7baad236271f533b0d337457781a
-
+            */
 
             // erc1155 mint
             /*
@@ -600,11 +695,20 @@ public class MainActivityPresenter implements IMainActivityPresenter {
                 view.showMessage(e.getMessage());
             }
         }else{
-            try {
-                ITransactionHistory2 txs = getTxHistory2UseCase.execute(skip, limit);
-                System.out.println(txs);
-            } catch (Exception e) {
-                view.showMessage(e.getMessage());
+            if(false) {
+                try {
+                    ITransactionHistory2 txs = getTxHistory2UseCase.execute(skip, limit);
+                    System.out.println(txs);
+                } catch (Exception e) {
+                    view.showMessage(e.getMessage());
+                }
+            }else{
+                try {
+                    String txid = mergeBalanceUseCase.execute("500", "10000");
+                    System.out.println(txid);
+                }catch(Exception e){
+                    view.showMessage(e.getMessage());
+                }
             }
         }
     }
