@@ -378,6 +378,9 @@ public class MainActivityPresenter implements IMainActivityPresenter {
     @Override
     public void getAddress(String address) {
         try {
+            if(address == ""){
+                address = null;
+            }
             IAddressesResponse response = addressesUseCases.execute(address);
             view.updateWalletAddress(response.getAddress());
         } catch (Exception e) {
@@ -435,7 +438,7 @@ public class MainActivityPresenter implements IMainActivityPresenter {
                                 false,
                                 msg,
                                 true);
-            }else if(isOutputs){
+            }else if(isOutputs){0
                 IOutput[] outputs = new IOutput[3];
                 outputs[0]  = new Output(
                         "Sa9T57cng8Sg9fFXLgfASxpygXUemYStKF",
@@ -1155,15 +1158,18 @@ public class MainActivityPresenter implements IMainActivityPresenter {
                 JoinWalletInCreationUseCase joinWalletInCreationUseCase1 = new JoinWalletInCreationUseCase(
                         credentials1,
                         bitcoreWalletServerAPI1);
+                /*
                 GetWalletUseCase getWalletUseCase = new GetWalletUseCase(
                         credentials1,
                         bitcoreWalletServerAPI1);
 
+                 */
+
                 String walletId = createWalletUseCase1.execute(2, 2, "kWallet", false, coin);
                 IJoinWalletResponse joinWalletResponse = joinWalletInCreationUseCase1.execute(walletId, coin);
 
-                IWallet response = getWalletUseCase.execute();
-                String secret = CommUtils.BuildJoinWalletSecret(response.getWalletCore().getId(), credentials1.getWalletPrivateKey().getPrivateKeyAsHex(), "vcl", "livenet");
+                // IWallet response = getWalletUseCase.execute();
+                String secret = CommUtils.BuildJoinWalletSecret(joinWalletResponse.getWalletCore().getId(), credentials1.getWalletPrivateKey().getPrivateKeyAsHex(), "vcl", "livenet");
 
                 /*
                 String secret = "F4vvVDC1HbPRcAoMtFLptmL2pMjeiBYiyR3GqiiNqX9wfNFJ3Rpi53o7Nz35CcTWDiuLNY3RMELvcl";
@@ -1198,7 +1204,7 @@ public class MainActivityPresenter implements IMainActivityPresenter {
                 */
 
                 IJoinWalletResponse joinWalletResponse1 = joinWalletInCreationUseCase2.execute(secret, "kCopayerName", true);
-                System.out.println("aaa");
+                System.out.println(joinWalletResponse1.getWalletCore().getStatus());
             }
         }catch (Exception e) {
             System.out.println(e);
