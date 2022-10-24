@@ -94,6 +94,7 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.publishTxp
 import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.signTxp.ISignTxpUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.wallet.createWallet.CreateWalletUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.wallet.createWallet.ICreateWalletUseCase;
+import org.openkuva.kuvabase.bwcj.domain.useCases.wallet.getWallet.GetWalletUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.wallet.getWallet.IGetWalletUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.wallet.getWalletAddress.IGetWalletAddressesUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.wallet.getWalletBalance.IGetWalletBalanceUseCase;
@@ -156,6 +157,8 @@ import org.openkuva.kuvabase.bwcj.domain.useCases.transactionProposal.getAllPend
 import org.openkuva.kuvabase.bwcj.domain.useCases.wallet.getUtxos.IGetUtxosUseCase;
 import org.openkuva.kuvabase.bwcj.domain.useCases.wallet.mergeBalance.IMergeBalanceUseCase;
 
+import org.openkuva.kuvabase.bwcj.domain.utils.CommUtils;
+
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -173,6 +176,9 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
+import org.bitcoinj.core.Base58;
+import org.bitcoinj.core.Utils;
 
 public class MainActivityPresenter implements IMainActivityPresenter {
     private final IMainActivityView view;
@@ -349,9 +355,20 @@ public class MainActivityPresenter implements IMainActivityPresenter {
         try {
             // view.showMnemonic(join(initializeCredentialsUseCase.execute(""), " "));
             view.showMessage(join(this.credentials.getMnemonic(), ""));
-            String walletId = createWallet.execute();
-            joinWalletInCreationUseCase.execute(walletId);
-            getWalletAddressesUseCases.create();
+            String walletId;
+            if(false) {
+                walletId = createWallet.execute();
+                joinWalletInCreationUseCase.execute(walletId);
+                getWalletAddressesUseCases.create();
+            }else{
+                walletId = createWallet.execute(2, 3, "kWallet", false, "vcl");
+                joinWalletInCreationUseCase.execute(walletId);
+                IWallet response =
+                        getWalletUseCase.execute();
+
+                String secret = CommUtils.BuildJoinWalletSecret(response.getWalletCore().getId(), credentials.getWalletPrivateKey().getPrivateKeyAsHex(), "vcl", "livenet");
+                System.out.println(secret);
+            }
             view.updateWalletId(walletId);
         } catch (Exception e) {
             view.showMessage(e.getMessage());
@@ -687,6 +704,31 @@ public class MainActivityPresenter implements IMainActivityPresenter {
 
     @Override
     public void getTxHistory(Integer skip, Integer limit, String tokenAddress, Integer includeExtendedInfo) {
+        /*
+        String walletId = "f8914e6d-0dbe-4566-a6c3-6932f84e9335";
+        String walletId1 = walletId.replace("-", "");
+        String wid = Base58.encode(Utils.HEX.decode(walletId1));
+
+        String walletPrivateKey = "3741e27b2c7e8264d8421d53ab301f727f0f87cd5f5f5711db4c769157a74e82";
+        String walletPrivateKey1 = walletPrivateKey + "01";
+        String wpriv1 = Base58.encodeChecked(128, Utils.HEX.decode(walletPrivateKey1));
+        */
+
+        String secret = "XhGFGvt2PPVugdr7zcZ8VJKy589JAdsRd6WEuaRnNmLMPfW9rGJPT5hepNDa3bcGw6dEgbshEFLvcl";
+        String walletId = Utils.HEX.encode(Base58.decode(secret.substring(0,22)));
+        String walletPrivateKey = Utils.HEX.encode(Base58.decodeChecked(secret.substring(22, 74)));
+        String network = secret.substring(74,75);
+        String coin = secret.substring(75, secret.length());
+
+        if(network.compareTo("L")==0){
+            network = "livenet";
+        }else{
+            network="testnet";
+        }
+
+        String walletId1 = walletId.substring(0,8) + "-" + walletId.substring(8, 12)+ "-" + walletId.substring(12, 16) + "-" + walletId.substring(16, 20) +"-" + walletId.substring(20, walletId.length());
+        String walletPrivateKey1 = walletPrivateKey.substring(2, walletPrivateKey.length()-2);
+
         if(false) {
             try {
                 ITransactionHistory[] txs = getTxHistoryUseCase.execute(skip, limit, tokenAddress, includeExtendedInfo);
@@ -1078,27 +1120,86 @@ public class MainActivityPresenter implements IMainActivityPresenter {
 
     @Override
     public void testSingle() {
-        String coin = "eth";
+        String coin = "vcl";
+        String url = "http://69.234.192.199:3232/bws/api/";
+        // String url = "http://192.168.246.133:3232/bws/api/";
         // john
         try {
-            Credentials credentials1 = createCredentials(null, "eth");
-            IBitcoreWalletServerAPI bitcoreWalletServerAPI1 = createBwsApi("http://192.168.246.133:3232/bws/api/", credentials1);
-            CreateWalletUseCase createWalletUseCase1 = new CreateWalletUseCase(
-                    credentials1,
-                    bitcoreWalletServerAPI1);
-            JoinWalletInCreationUseCase joinWalletInCreationUseCase1 = new JoinWalletInCreationUseCase(
-                    credentials1,
-                    bitcoreWalletServerAPI1);
-            CreateNewMainAddressesFromWalletUseCase createNewMainAddressesFromWalletUseCase1 = new CreateNewMainAddressesFromWalletUseCase(
-                    bitcoreWalletServerAPI1);
-            String walletId = createWalletUseCase1.execute(coin);
-            IJoinWalletResponse joinWalletResponse = joinWalletInCreationUseCase1.execute(walletId, coin);
-            IAddressesResponse addressesResponse = createNewMainAddressesFromWalletUseCase1.create();
-            view.updateWalletId(walletId);
-            view.updateWalletAddress(addressesResponse.getAddress());
-            System.out.println("bbb");
-            System.out.println(credentials1.getMnemonic());
-            view.updateMnemonic(credentials1.getMnemonic().toString());
+            if(false) {
+                Credentials credentials1 = createCredentials(null, coin);
+                IBitcoreWalletServerAPI bitcoreWalletServerAPI1 = createBwsApi(url, credentials1);
+                CreateWalletUseCase createWalletUseCase1 = new CreateWalletUseCase(
+                        credentials1,
+                        bitcoreWalletServerAPI1);
+                JoinWalletInCreationUseCase joinWalletInCreationUseCase1 = new JoinWalletInCreationUseCase(
+                        credentials1,
+                        bitcoreWalletServerAPI1);
+                CreateNewMainAddressesFromWalletUseCase createNewMainAddressesFromWalletUseCase1 = new CreateNewMainAddressesFromWalletUseCase(
+                        bitcoreWalletServerAPI1);
+                String walletId = createWalletUseCase1.execute(coin);
+                IJoinWalletResponse joinWalletResponse = joinWalletInCreationUseCase1.execute(walletId, coin);
+                IAddressesResponse addressesResponse = createNewMainAddressesFromWalletUseCase1.create();
+                view.updateWalletId(walletId);
+                view.updateWalletAddress(addressesResponse.getAddress());
+                System.out.println("bbb");
+                System.out.println(credentials1.getMnemonic());
+                view.updateMnemonic(credentials1.getMnemonic().toString());
+            }else {
+
+                Credentials credentials1 = createCredentials(null, coin);
+                IBitcoreWalletServerAPI bitcoreWalletServerAPI1 = createBwsApi(url, credentials1);
+                CreateWalletUseCase createWalletUseCase1 = new CreateWalletUseCase(
+                        credentials1,
+                        bitcoreWalletServerAPI1);
+
+                JoinWalletInCreationUseCase joinWalletInCreationUseCase1 = new JoinWalletInCreationUseCase(
+                        credentials1,
+                        bitcoreWalletServerAPI1);
+                GetWalletUseCase getWalletUseCase = new GetWalletUseCase(
+                        credentials1,
+                        bitcoreWalletServerAPI1);
+
+                String walletId = createWalletUseCase1.execute(2, 2, "kWallet", false, coin);
+                IJoinWalletResponse joinWalletResponse = joinWalletInCreationUseCase1.execute(walletId, coin);
+
+                IWallet response = getWalletUseCase.execute();
+                String secret = CommUtils.BuildJoinWalletSecret(response.getWalletCore().getId(), credentials1.getWalletPrivateKey().getPrivateKeyAsHex(), "vcl", "livenet");
+
+                /*
+                String secret = "F4vvVDC1HbPRcAoMtFLptmL2pMjeiBYiyR3GqiiNqX9wfNFJ3Rpi53o7Nz35CcTWDiuLNY3RMELvcl";
+                ECKey key = ECKey
+                        .fromPrivate(Utils.HEX.decode(CommUtils.ParseWalletSecret(secret).getWalletPrivateKey()));
+
+
+                // Credentials credentials2 = createCredentials("scare doctor mansion distance divert benefit anger better rich mean release audit", coin);
+                 */
+                Credentials credentials2 = createCredentials(null, coin);
+
+                /*
+                String aa = credentials2.getCopayersCryptUtils().signMessage("abcd", CommUtils.ParseWalletSecret(secret).getWalletPrivateKey());
+                boolean bb = credentials2.getCopayersCryptUtils().verifyMessage("abcd", aa, Utils.HEX.encode(key.getPubKey()));
+                 */
+                System.out.println("privKey: " + credentials1.getWalletPrivateKey().getPrivateKeyAsHex());
+                System.out.println("pubKey: " + credentials1.getWalletPrivateKey().getPublicKeyAsHex());
+                System.out.println("seed1: " + credentials1.getMnemonic().toString());
+                System.out.println("seed2: " + credentials2.getMnemonic().toString());
+                System.out.println(secret);
+
+                IBitcoreWalletServerAPI bitcoreWalletServerAPI2 = createBwsApi(url, credentials2);
+                JoinWalletInCreationUseCase joinWalletInCreationUseCase2 = new JoinWalletInCreationUseCase(
+                        credentials2,
+                        bitcoreWalletServerAPI2);
+                /*
+                Credentials credentials2 = createCredentials(null, coin);
+                IBitcoreWalletServerAPI bitcoreWalletServerAPI2 = createBwsApi("http://69.234.192.199:3232/bws/api/", credentials2);
+                JoinWalletInCreationUseCase joinWalletInCreationUseCase2 = new JoinWalletInCreationUseCase(
+                        credentials2,
+                        bitcoreWalletServerAPI2);
+                */
+
+                IJoinWalletResponse joinWalletResponse1 = joinWalletInCreationUseCase2.execute(secret, "kCopayerName", true);
+                System.out.println("aaa");
+            }
         }catch (Exception e) {
             System.out.println(e);
         }
@@ -1108,9 +1209,13 @@ public class MainActivityPresenter implements IMainActivityPresenter {
         Credentials credentials;
 
         if(words != null) {
+            /*
             credentials = new Credentials(split("rotate scrap radio awesome eight fee degree fee young tone board another"),
                     "",
                     coin);
+
+             */
+            credentials = new Credentials(split(words), "", coin);
 
         }else{
             credentials = new Credentials(coin);

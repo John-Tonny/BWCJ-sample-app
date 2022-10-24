@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        boolean isElectrum = true;
+        boolean isElectrum = false;
         copayersCryptUtilsVcl = new CopayersCryptUtils(new VircleCoinTypeRetriever());
         copayersCryptUtilsVcl.setElectrum(isElectrum);
 
@@ -210,6 +210,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // words = "rotate scrap radio awesome eight fee degree fee young tone board another";
         // words = "square spray mother unusual foam casino fall include pulp arm soul scorpion";
         words = "omit embark obscure food fault notable smoke crowd bicycle surge bone opera";
+        String words1 = "square spray mother unusual foam casino fall include pulp arm soul scorpion";
 
         if(true) {
             credentials = new Credentials(split(words), "", copayersCryptUtilsVcl);
@@ -219,6 +220,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             credentialss[1].setNetworkParameters(MainNetParams.get());
         }else{
             credentials = new Credentials(split(words), "", copayersCryptUtilsEth);
+            credentialss = new Credentials[2];
+            credentialss[0] = credentials;
+            credentialss[1] = credentials;
         }
         credentials.setNetworkParameters(MainNetParams.get());
 
